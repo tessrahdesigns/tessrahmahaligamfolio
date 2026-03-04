@@ -1,8 +1,30 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
+import whatsInANameImg from "@/assets/blog-whats-in-a-name.jpg";
 
 const posts = [
+  {
+    slug: "whats-in-a-name",
+    title: "What's in a Name?",
+    excerpt: "Theresa, Tess-Sarah, Tessa, Tess, Tesla. I've gotten it all. On the experience of having your name mispronounced — and why LinkedIn's pronunciation feature matters.",
+    date: "July 29, 2020",
+    category: "Inclusion",
+    readTime: "4 min",
+    tags: ["Accessibility", "Inclusion", "Diversity", "POC", "Life", "Personal development"],
+    heroImage: whatsInANameImg,
+    content: `Theresa, Tess-Sarah, Tessa, Tess, Tesla. I've gotten it all. Seriously — even that last one.
+
+Thankfully, LinkedIn has rolled out its name pronunciation feature, and I love it. Finally — an opportunity to beat them to the punch.
+
+In my first fast-food job as a teenager, my boss called me one of these names. I figured "My name must be difficult for him to pronounce, maybe if I let it go he'll be more comfortable." I didn't do anything about it, I just lived with it.
+
+In my first career job, my boss introduced me as Tessa to the entire company. It took me a full month to work up the courage to write an email asking to be called by my full name, Tessrah.
+
+In both situations — I felt anglicized, and like my culture was being stripped away just to make others feel comfortable. These bosses didn't ask me what I preferred to be called beforehand. I had to learn to stand up for myself and claim my name.
+
+LinkedIn has taken a step in the direction of accessibility and inclusiveness. They are lessening the burden on those of us who have non-English sounding names, as well as those who have good intentions of trying to pronounce those names. In the future I hope to see more social platforms taking a similar approach as LinkedIn has. Their user experience team has knocked it out of the park, so that users like me hopefully will have less of these types of experiences.`,
+  },
   {
     slug: "designing-with-care",
     title: "Designing with Care in a World That Moves Fast",
@@ -132,11 +154,27 @@ const WritingPost = () => {
             {post.title}
           </h1>
 
-          <p className="text-muted-foreground text-lg mb-12 border-b border-border pb-12">
+          <p className="text-muted-foreground text-lg mb-6">
             {post.excerpt}
           </p>
 
-          <div className="prose prose-neutral max-w-none">
+          {post.tags && (
+            <div className="flex flex-wrap gap-2 mb-8">
+              {post.tags.map((tag: string) => (
+                <span key={tag} className="text-xs font-medium px-3 py-1 rounded-full bg-accent text-accent-foreground">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+
+          {post.heroImage && (
+            <div className="mb-12 rounded-lg overflow-hidden border border-border">
+              <img src={post.heroImage} alt={post.title} className="w-full h-auto" />
+            </div>
+          )}
+
+          <div className="prose prose-neutral max-w-none border-t border-border pt-12">
             {post.content.split("\n\n").map((paragraph, i) => (
               <p key={i} className="text-foreground/80 leading-relaxed mb-6">{paragraph}</p>
             ))}

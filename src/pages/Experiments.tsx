@@ -1,25 +1,30 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const experiments = [
   {
+    slug: "conversational-ui-patterns",
     title: "Conversational UI Patterns",
     description: "Exploring how chat interfaces can guide complex decision-making without overwhelming users. Built a prototype using AI-assisted flow design.",
     tags: ["AI", "Prototyping", "UX"],
     date: "Feb 2026",
   },
   {
+    slug: "vibe-coding-with-lovable",
     title: "Vibe Coding with Lovable",
     description: "Learning to build with AI-assisted tools — this portfolio itself is an experiment in what's possible when design thinking meets vibe coding.",
     tags: ["Vibe Coding", "Meta", "Learning"],
     date: "Mar 2026",
   },
   {
+    slug: "generative-color-systems",
     title: "Generative Color Systems",
     description: "A small tool that generates accessible color palettes from a single seed color, inspired by Japanese seasonal color traditions.",
     tags: ["Color Theory", "Accessibility", "Japan"],
     date: "Jan 2026",
   },
   {
+    slug: "design-journaling-bot",
     title: "Design Journaling Bot",
     description: "A daily reflection prompt system that helps designers build a habit of documenting their thinking and decisions.",
     tags: ["AI", "Reflection", "Craft"],
@@ -50,8 +55,8 @@ const Experiments = () => {
 
         <div className="grid sm:grid-cols-2 gap-6">
           {experiments.map((exp, i) => (
+            <Link key={exp.slug} to={`/experiments/${exp.slug}`}>
             <motion.article
-              key={exp.title}
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
@@ -75,6 +80,7 @@ const Experiments = () => {
                 ))}
               </div>
             </motion.article>
+            </Link>
           ))}
         </div>
       </div>

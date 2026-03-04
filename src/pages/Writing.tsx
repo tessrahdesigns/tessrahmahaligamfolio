@@ -83,9 +83,11 @@ const Writing = () => {
                 <span>·</span>
                 <span className="text-primary">{post.category}</span>
               </div>
-              <h2 className="font-serif text-2xl font-medium text-foreground mb-2 hover:text-primary transition-colors cursor-pointer">
-                {post.title}
-              </h2>
+              <Link to={`/writing/${post.slug}`}>
+                <h2 className="font-serif text-2xl font-medium text-foreground mb-2 hover:text-primary transition-colors cursor-pointer">
+                  {post.title}
+                </h2>
+              </Link>
               <p className="text-muted-foreground leading-relaxed">
                 {post.excerpt}
               </p>

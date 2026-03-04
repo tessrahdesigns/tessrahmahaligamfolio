@@ -3,6 +3,14 @@ import { Link } from "react-router-dom";
 
 const posts = [
   {
+    slug: "whats-in-a-name",
+    title: "What's in a Name?",
+    excerpt: "Theresa, Tess-Sarah, Tessa, Tess, Tesla. I've gotten it all. On the experience of having your name mispronounced — and why LinkedIn's pronunciation feature matters.",
+    date: "July 2020",
+    category: "Inclusion",
+    readTime: "4 min",
+  },
+  {
     slug: "designing-with-care",
     title: "Designing with Care in a World That Moves Fast",
     excerpt: "On the tension between shipping quickly and designing thoughtfully — and why slowing down is sometimes the most productive thing you can do.",
@@ -36,7 +44,7 @@ const posts = [
   },
 ];
 
-const categories = ["All", "Craft", "Accessibility", "AI & Design", "Leadership"];
+const categories = ["All", "Craft", "Accessibility", "Inclusion", "AI & Design", "Leadership", "Personal"];
 
 const Writing = () => {
   return (

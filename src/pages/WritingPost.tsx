@@ -42,6 +42,52 @@ interface Post {
 
 const posts: Post[] = [
   {
+    slug: "diversity-of-thought-pt2",
+    title: "Part 2 of 2: What is diversity of thought anyways? (From a POC woman)",
+    excerpt: "For Part 2 I wanted to hear a POC man's perspective of what diversity of thought means to him — as well as how he is trying to create social change.",
+    date: "February 2021",
+    category: "Diversity",
+    readTime: "6 min",
+    tags: ["Diversity", "Blackhistorymonth", "Inclusion", "POC", "Personal development"],
+    heroImage: diversityPt2Img,
+    heroCaption: "Pulling from TTC transit story circle — via The Discourse Scarborough.",
+    content: `In 2020, with the wave of Black Lives Matter happening for the second time in the USA, there have been many stories from people of colour coming to light across North America. Part 1 of this series focused on my personal story as a designer in Toronto encountering roadblocks from entering the design industry as a POC woman. For Part 2 I wanted to hear a POC man's perspective of what diversity of thought means to him — as well as how he is trying to create social change.
+
+## Welcome to Jamaal Myers
+
+Health and Transit advocate for disproportionately represented communities, and Corporate Lawyer.
+
+I first met Jamaal in 2019 at a TTC transit story circle organized by the Scarborough Discourse. There was a city councillor in attendance whose job it was to listen to the community. He was defensive, argumentative, and gas lit the attendees rather than listened. Jamaal spoke passionately and communicated clearly on the importance of transit for the diverse region of Scarborough to the city councillor and it really struck a chord with me.
+
+I reached out to Jamaal via LinkedIn for an interview, and he was more than happy to oblige. In this two part interview we discussed:`,
+    bulletPoints: [
+      "His interest and why he got involved in this transit cause",
+      "Anti-black racism in both the transit and political system",
+      "His personal experience in the legal industry as a black man who identifies as gay",
+      "What diversity of thought means to him",
+    ],
+    footnote: "Enjoy the video interviews below, feel free to like, comment and subscribe for more product and social related content.",
+    videos: [
+      {
+        url: "https://www.youtube.com/watch?v=5ek_-XbFnbQ",
+        thumbnail: ytJamaalPt1,
+        title: "Interview with Jamaal Myers — Part 1",
+      },
+      {
+        url: "https://www.youtube.com/watch?v=AC1hqmV6CHg",
+        thumbnail: ytJamaalPt2,
+        title: "Interview with Jamaal Myers — Part 2",
+      },
+    ],
+    resources: [
+      {
+        description: "TTC Transit Story Circle — organized by The Discourse Scarborough",
+        url: "https://thediscourse.ca/scarborough/ttc-transit-story-circle",
+        image: diversityPt2Img,
+      },
+    ],
+  },
+  {
     slug: "diversity-of-thought",
     title: "Part 1 of 2: What is diversity of thought anyways? (From a POC woman)",
     excerpt: "Once in 2017, my manager said 'we need more diversity in this workplace'. I got excited. Then he said 'I meant diversity of thought.' Here I am 4 years later — it's still on my mind.",

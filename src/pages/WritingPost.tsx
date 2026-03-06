@@ -3,9 +3,18 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import whatsInANameImg from "@/assets/blog-whats-in-a-name.jpg";
 import diversityImg from "@/assets/blog-diversity-of-thought.jpg";
+import diversityPt2Img from "@/assets/blog-diversity-pt2.png";
 import angelaBainsImg from "@/assets/link-angela-bains.png";
 import openDiversityImg from "@/assets/link-open-diversity-data.png";
 import cnbcDiversityImg from "@/assets/link-cnbc-diversity.png";
+import ytJamaalPt1 from "@/assets/yt-jamaal-pt1.jpg";
+import ytJamaalPt2 from "@/assets/yt-jamaal-pt2.jpg";
+
+interface YouTubeVideo {
+  url: string;
+  thumbnail: string;
+  title?: string;
+}
 
 interface ExternalResource {
   description: string;
@@ -27,9 +36,57 @@ interface Post {
   pullQuote?: string;
   resources?: ExternalResource[];
   footnote?: string;
+  videos?: YouTubeVideo[];
+  bulletPoints?: string[];
 }
 
 const posts: Post[] = [
+  {
+    slug: "diversity-of-thought-pt2",
+    title: "Part 2 of 2: What is diversity of thought anyways? (From a POC woman)",
+    excerpt: "For Part 2 I wanted to hear a POC man's perspective of what diversity of thought means to him — as well as how he is trying to create social change.",
+    date: "February 2021",
+    category: "Diversity",
+    readTime: "6 min",
+    tags: ["Diversity", "Blackhistorymonth", "Inclusion", "POC", "Personal development"],
+    heroImage: diversityPt2Img,
+    heroCaption: "Pulling from TTC transit story circle — via The Discourse Scarborough.",
+    content: `In 2020, with the wave of Black Lives Matter happening for the second time in the USA, there have been many stories from people of colour coming to light across North America. Part 1 of this series focused on my personal story as a designer in Toronto encountering roadblocks from entering the design industry as a POC woman. For Part 2 I wanted to hear a POC man's perspective of what diversity of thought means to him — as well as how he is trying to create social change.
+
+## Welcome to Jamaal Myers
+
+Health and Transit advocate for disproportionately represented communities, and Corporate Lawyer.
+
+I first met Jamaal in 2019 at a TTC transit story circle organized by the Scarborough Discourse. There was a city councillor in attendance whose job it was to listen to the community. He was defensive, argumentative, and gas lit the attendees rather than listened. Jamaal spoke passionately and communicated clearly on the importance of transit for the diverse region of Scarborough to the city councillor and it really struck a chord with me.
+
+I reached out to Jamaal via LinkedIn for an interview, and he was more than happy to oblige. In this two part interview we discussed:`,
+    bulletPoints: [
+      "His interest and why he got involved in this transit cause",
+      "Anti-black racism in both the transit and political system",
+      "His personal experience in the legal industry as a black man who identifies as gay",
+      "What diversity of thought means to him",
+    ],
+    footnote: "Enjoy the video interviews below, feel free to like, comment and subscribe for more product and social related content.",
+    videos: [
+      {
+        url: "https://www.youtube.com/watch?v=5ek_-XbFnbQ",
+        thumbnail: ytJamaalPt1,
+        title: "Interview with Jamaal Myers — Part 1",
+      },
+      {
+        url: "https://www.youtube.com/watch?v=AC1hqmV6CHg",
+        thumbnail: ytJamaalPt2,
+        title: "Interview with Jamaal Myers — Part 2",
+      },
+    ],
+    resources: [
+      {
+        description: "TTC Transit Story Circle — organized by The Discourse Scarborough",
+        url: "https://thediscourse.ca/scarborough/ttc-transit-story-circle",
+        image: diversityPt2Img,
+      },
+    ],
+  },
   {
     slug: "diversity-of-thought",
     title: "Part 1 of 2: What is diversity of thought anyways? (From a POC woman)",
@@ -291,8 +348,45 @@ const WritingPost = () => {
               </div>
             )}
 
+            {post.bulletPoints && post.bulletPoints.length > 0 && (
+              <ul className="list-disc pl-6 space-y-2 my-6">
+                {post.bulletPoints.map((point, i) => (
+                  <li key={i} className="text-foreground/80 leading-relaxed">{point}</li>
+                ))}
+              </ul>
+            )}
+
             {post.footnote && (
               <p className="text-sm italic text-muted-foreground mt-10">{post.footnote}</p>
+            )}
+
+            {post.videos && post.videos.length > 0 && (
+              <div className="space-y-6 my-10">
+                {post.videos.map((video, i) => (
+                  <a
+                    key={i}
+                    href={video.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block group rounded-lg border border-border overflow-hidden hover:border-primary/40 transition-colors"
+                  >
+                    <div className="aspect-video overflow-hidden bg-muted relative">
+                      <img src={video.thumbnail} alt={video.title || "Video"} className="w-full h-full object-cover" />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
+                        <div className="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center">
+                          <svg viewBox="0 0 24 24" fill="white" className="w-7 h-7 ml-1"><polygon points="5,3 19,12 5,21" /></svg>
+                        </div>
+                      </div>
+                    </div>
+                    {video.title && (
+                      <div className="p-4 flex items-center justify-between gap-3">
+                        <p className="text-sm font-medium text-foreground/80">{video.title}</p>
+                        <ExternalLink size={14} className="text-muted-foreground shrink-0 group-hover:text-primary transition-colors" />
+                      </div>
+                    )}
+                  </a>
+                ))}
+              </div>
             )}
           </div>
         </motion.div>

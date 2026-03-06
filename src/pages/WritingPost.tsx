@@ -238,15 +238,62 @@ const WritingPost = () => {
           )}
 
           {post.heroImage && (
-            <div className="mb-12 rounded-lg overflow-hidden border border-border">
+            <div className="mb-2 rounded-lg overflow-hidden border border-border">
               <img src={post.heroImage} alt={post.title} className="w-full h-auto" />
             </div>
           )}
 
+          {post.heroCaption && (
+            <p className="text-xs text-muted-foreground italic mb-12">{post.heroCaption}</p>
+          )}
+
+          {!post.heroCaption && post.heroImage && <div className="mb-12" />}
+
           <div className="prose prose-neutral max-w-none border-t border-border pt-12">
-            {post.content.split("\n\n").map((paragraph, i) => (
-              <p key={i} className="text-foreground/80 leading-relaxed mb-6">{paragraph}</p>
-            ))}
+            {post.content.split("\n\n").map((paragraph, i) => {
+              if (paragraph.startsWith("## ")) {
+                return (
+                  <h2 key={i} className="font-serif text-2xl font-medium text-foreground mt-10 mb-4">
+                    {paragraph.replace("## ", "")}
+                  </h2>
+                );
+              }
+              return <p key={i} className="text-foreground/80 leading-relaxed mb-6">{paragraph}</p>;
+            })}
+
+            {post.pullQuote && (
+              <blockquote className="border-l-4 border-primary/40 pl-6 py-4 my-10 bg-accent/30 rounded-r-lg">
+                <p className="font-serif text-lg italic text-foreground/90 leading-relaxed">
+                  {post.pullQuote}
+                </p>
+              </blockquote>
+            )}
+
+            {post.resources && post.resources.length > 0 && (
+              <div className="space-y-6 my-10">
+                {post.resources.map((resource, i) => (
+                  <a
+                    key={i}
+                    href={resource.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block group rounded-lg border border-border overflow-hidden hover:border-primary/40 transition-colors"
+                  >
+                    <div className="aspect-[16/9] overflow-hidden bg-muted">
+                      <img src={resource.image} alt={resource.description} className="w-full h-full object-cover object-top" />
+                    </div>
+                    <div className="p-4 flex items-start justify-between gap-3">
+                      <p className="text-sm text-foreground/80">{resource.description}</p>
+                      <ExternalLink size={14} className="text-muted-foreground shrink-0 mt-0.5 group-hover:text-primary transition-colors" />
+                    </div>
+                  </a>
+                ))}
+              </div>
+            )}
+
+            {post.footnote && (
+              <p className="text-sm italic text-muted-foreground mt-10">{post.footnote}</p>
+            )}
           </div>
         </motion.div>
       </div>

@@ -3,6 +3,14 @@ import { Link } from "react-router-dom";
 
 const posts = [
   {
+    slug: "diversity-of-thought",
+    title: "Part 1 of 2: What is diversity of thought anyways? (From a POC woman)",
+    excerpt: "Once in 2017, my manager said 'we need more diversity in this workplace'. I got excited. Then he said 'I meant diversity of thought.' Here I am 4 years later — it's still on my mind.",
+    date: "February 2021",
+    category: "Diversity",
+    readTime: "7 min",
+  },
+  {
     slug: "whats-in-a-name",
     title: "What's in a Name?",
     excerpt: "Theresa, Tess-Sarah, Tessa, Tess, Tesla. I've gotten it all. On the experience of having your name mispronounced — and why LinkedIn's pronunciation feature matters.",
@@ -44,7 +52,7 @@ const posts = [
   },
 ];
 
-const categories = ["All", "Craft", "Accessibility", "Inclusion", "AI & Design", "Leadership", "Personal"];
+const categories = ["All", "Craft", "Accessibility", "Inclusion", "Diversity", "AI & Design", "Leadership", "Personal"];
 
 const Writing = () => {
   return (

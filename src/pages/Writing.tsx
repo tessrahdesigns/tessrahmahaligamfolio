@@ -3,6 +3,14 @@ import { Link } from "react-router-dom";
 
 const posts = [
   {
+    slug: "diversity-of-thought-pt2",
+    title: "Part 2 of 2: What is diversity of thought anyways? (From a POC woman)",
+    excerpt: "For Part 2 I wanted to hear a POC man's perspective of what diversity of thought means to him — as well as how he is trying to create social change.",
+    date: "February 2021",
+    category: "Diversity",
+    readTime: "6 min",
+  },
+  {
     slug: "diversity-of-thought",
     title: "Part 1 of 2: What is diversity of thought anyways? (From a POC woman)",
     excerpt: "Once in 2017, my manager said 'we need more diversity in this workplace'. I got excited. Then he said 'I meant diversity of thought.' Here I am 4 years later — it's still on my mind.",

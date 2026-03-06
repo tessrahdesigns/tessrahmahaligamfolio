@@ -3,9 +3,12 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import whatsInANameImg from "@/assets/blog-whats-in-a-name.jpg";
 import diversityImg from "@/assets/blog-diversity-of-thought.jpg";
+import diversityPt2Img from "@/assets/blog-diversity-pt2.png";
 import angelaBainsImg from "@/assets/link-angela-bains.png";
 import openDiversityImg from "@/assets/link-open-diversity-data.png";
 import cnbcDiversityImg from "@/assets/link-cnbc-diversity.png";
+import ytJamaalPt1 from "@/assets/yt-jamaal-pt1.jpg";
+import ytJamaalPt2 from "@/assets/yt-jamaal-pt2.jpg";
 
 interface ExternalResource {
   description: string;

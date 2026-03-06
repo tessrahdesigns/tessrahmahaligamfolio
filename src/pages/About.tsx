@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import heroFloral from "@/assets/hero-floral.jpg";
+import tessrahHeadshot from "@/assets/tessrah-headshot.jpg";
 
 const About = () => {
   return (

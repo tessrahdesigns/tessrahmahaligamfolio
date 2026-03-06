@@ -13,20 +13,29 @@ const About = () => {
           className="space-y-16"
         >
           {/* Intro */}
-          <div>
-            <h1 className="font-serif text-4xl sm:text-5xl font-light text-foreground mb-6">
-              About Me <span className="inline-block ml-2">🇨🇦</span>
-            </h1>
-            <p className="text-lg text-foreground leading-relaxed mb-4">
-              I'm a senior product designer based in Canada who believes that the best 
-              digital products are the ones that feel genuinely human. My work sits at 
-              the intersection of empathy, systems thinking, and craft.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              I care deeply about accessibility, inclusive design, and creating space 
-              for people who are often overlooked by technology. Design, to me, is an 
-              act of care.
-            </p>
+          <div className="flex flex-col sm:flex-row gap-8 items-start">
+            <div className="w-48 sm:w-56 flex-shrink-0 rounded-sm overflow-hidden">
+              <img
+                src={tessrahHeadshot}
+                alt="Tessrah headshot"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div>
+              <h1 className="font-serif text-4xl sm:text-5xl font-light text-foreground mb-6">
+                About Me <span className="inline-block ml-2">🇨🇦</span>
+              </h1>
+              <p className="text-lg text-foreground leading-relaxed mb-4">
+                I'm a senior product designer based in Canada who believes that the best 
+                digital products are the ones that feel genuinely human. My work sits at 
+                the intersection of empathy, systems thinking, and craft.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                I care deeply about accessibility, inclusive design, and creating space 
+                for people who are often overlooked by technology. Design, to me, is an 
+                act of care.
+              </p>
+            </div>
           </div>
 
           {/* Values */}

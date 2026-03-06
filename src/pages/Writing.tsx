@@ -52,7 +52,7 @@ const posts = [
   },
 ];
 
-const categories = ["All", "Craft", "Accessibility", "Inclusion", "AI & Design", "Leadership", "Personal"];
+const categories = ["All", "Craft", "Accessibility", "Inclusion", "Diversity", "AI & Design", "Leadership", "Personal"];
 
 const Writing = () => {
   return (

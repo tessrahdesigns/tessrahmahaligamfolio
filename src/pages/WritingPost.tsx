@@ -1,9 +1,78 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import whatsInANameImg from "@/assets/blog-whats-in-a-name.jpg";
+import diversityImg from "@/assets/blog-diversity-of-thought.jpg";
+import angelaBainsImg from "@/assets/link-angela-bains.png";
+import openDiversityImg from "@/assets/link-open-diversity-data.png";
+import cnbcDiversityImg from "@/assets/link-cnbc-diversity.png";
 
-const posts = [
+interface ExternalResource {
+  description: string;
+  url: string;
+  image: string;
+}
+
+interface Post {
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  category: string;
+  readTime: string;
+  tags?: string[];
+  heroImage?: string;
+  heroCaption?: string;
+  content: string;
+  pullQuote?: string;
+  resources?: ExternalResource[];
+  footnote?: string;
+}
+
+const posts: Post[] = [
+  {
+    slug: "diversity-of-thought",
+    title: "Part 1 of 2: What is diversity of thought anyways? (From a POC woman)",
+    excerpt: "Once in 2017, my manager said 'we need more diversity in this workplace'. I got excited. Then he said 'I meant diversity of thought.' Here I am 4 years later — it's still on my mind.",
+    date: "February 2021",
+    category: "Diversity",
+    readTime: "7 min",
+    tags: ["Diversity", "Blackhistorymonth", "Inclusion", "POC", "Personal development"],
+    heroImage: diversityImg,
+    heroCaption: "A photographer snaps me while I'm asking questions at Designer Thinkers TO. Conference themed \"Speak The Truth\".",
+    content: `Once in 2017, my manager said "we need more diversity in this workplace", I got excited and agreed. I went on to talk about the importance of diversity in the work place. He looked visibly uncomfortable and said "I meant diversity of thought". I was so puzzled and let down. He went on to explain what that meant. "Diversity of thought is when people of different thought processes come together: analytical, creative, etc." The meeting eventually wrapped up and I'm sure it left everyone's minds. Here I am 4 years later, to tell you it's still on my mind today. I have a lot of respect for that boss to this day, but I felt like he was missing something there.
+
+What is "diversity of thought" anyways? Why use that term instead of saying — diversity? It felt like a cop-out. I was 1 of 2 People Of Colour on the team, and the only one who was a woman. Was it fair to explain to me what diversity should mean? Or should the POC's on the team have been the ones leading that discussion?
+
+## First Hand Experience
+
+At Design Thinkers TO in 2018 themed "Speak The Truth", I attended a panel discussion called: "Discrimination in the creative industry? Really?" I voiced my opinion to studio owners in Toronto. I asked "Shouldn't studio's have a hiring quota for people of colour?" The response was an overwhelming "No, that isn't necessary. We look at talent. We hire the best person for the job." The tone was defensive. The panel had one POC who was a female.
+
+Over the years I have sent in countless applications to studios all over the city. I had my portfolio reviewed by my college professors years after graduating, an OCAD thesis professor, and a few RGD professionals. The response was always positive, so I know it wasn't about my lack of talent.
+
+An optional part of the conference experience was visiting studios across the city. I thought I would surely see POC designers in these spaces. In reality, I hardly saw any black or brown faces behind desks. I was definitely right during the panel discussion. There was a biased hiring practise taking place across Toronto design studios and firms. But the studio owners publicly disregarded my opinion as a POC. I was born and raised in the most diverse city in all of Canada, and these opportunities weren't available to me or people like me. The truth is, city studios needed to be better, and introduce diverse hiring practises into the workplace.
+
+Here are a few websites and videos that provide more detail into the subject:`,
+    pullQuote: `"Shouldn't studio's have a hiring quota for people of colour?" The response was an overwhelming "No, that isn't necessary. We look at talent. We hire the best person for the job."`,
+    resources: [
+      {
+        description: "In this talk by Angela Bains, she validates my experience. (In case I felt gas lit and crazy, which I did.)",
+        url: "https://vimeo.com/301185414",
+        image: angelaBainsImg,
+      },
+      {
+        description: "Companies are making an effort to be transparent about their diversity data.",
+        url: "http://opendiversitydata.org/",
+        image: openDiversityImg,
+      },
+      {
+        description: "For a more recent breakdown, look at CNBC's infographic from 2020.",
+        url: "https://www.cnbc.com/2020/06/11/companies-are-making-bold-promises-about-greater-diversity-theres-a-long-way-to-go.html",
+        image: cnbcDiversityImg,
+      },
+    ],
+    footnote: "Part two of the article comes out February 28th, 2021.",
+  },
   {
     slug: "whats-in-a-name",
     title: "What's in a Name?",

@@ -26,38 +26,6 @@ const posts = [
     category: "Inclusion",
     readTime: "4 min",
   },
-  {
-    slug: "designing-with-care",
-    title: "Designing with Care in a World That Moves Fast",
-    excerpt: "On the tension between shipping quickly and designing thoughtfully — and why slowing down is sometimes the most productive thing you can do.",
-    date: "February 2026",
-    category: "Craft",
-    readTime: "8 min",
-  },
-  {
-    slug: "accessibility-not-afterthought",
-    title: "Accessibility Is Not an Afterthought",
-    excerpt: "Reflections from a project that changed how I see design. When we design for the margins, we design better for everyone.",
-    date: "January 2026",
-    category: "Accessibility",
-    readTime: "12 min",
-  },
-  {
-    slug: "ai-design-partnership",
-    title: "AI as a Design Partner, Not a Replacement",
-    excerpt: "What I've learned from experimenting with AI tools in my design practice — the surprises, the limitations, and the possibilities.",
-    date: "December 2025",
-    category: "AI & Design",
-    readTime: "10 min",
-  },
-  {
-    slug: "quiet-leadership",
-    title: "The Power of Quiet Leadership in Design",
-    excerpt: "Not all design leaders need to be loud. On creating space for others, leading through craft, and the underrated skill of listening.",
-    date: "November 2025",
-    category: "Leadership",
-    readTime: "6 min",
-  },
 ];
 
 const categories = ["All", "Craft", "Accessibility", "Inclusion", "Diversity", "AI & Design", "Leadership", "Personal"];

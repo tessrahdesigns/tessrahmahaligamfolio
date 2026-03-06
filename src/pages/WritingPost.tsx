@@ -10,6 +10,12 @@ import cnbcDiversityImg from "@/assets/link-cnbc-diversity.png";
 import ytJamaalPt1 from "@/assets/yt-jamaal-pt1.jpg";
 import ytJamaalPt2 from "@/assets/yt-jamaal-pt2.jpg";
 
+interface YouTubeVideo {
+  url: string;
+  thumbnail: string;
+  title?: string;
+}
+
 interface ExternalResource {
   description: string;
   url: string;
@@ -30,6 +36,8 @@ interface Post {
   pullQuote?: string;
   resources?: ExternalResource[];
   footnote?: string;
+  videos?: YouTubeVideo[];
+  bulletPoints?: string[];
 }
 
 const posts: Post[] = [

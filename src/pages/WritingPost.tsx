@@ -348,8 +348,45 @@ const WritingPost = () => {
               </div>
             )}
 
+            {post.bulletPoints && post.bulletPoints.length > 0 && (
+              <ul className="list-disc pl-6 space-y-2 my-6">
+                {post.bulletPoints.map((point, i) => (
+                  <li key={i} className="text-foreground/80 leading-relaxed">{point}</li>
+                ))}
+              </ul>
+            )}
+
             {post.footnote && (
               <p className="text-sm italic text-muted-foreground mt-10">{post.footnote}</p>
+            )}
+
+            {post.videos && post.videos.length > 0 && (
+              <div className="space-y-6 my-10">
+                {post.videos.map((video, i) => (
+                  <a
+                    key={i}
+                    href={video.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block group rounded-lg border border-border overflow-hidden hover:border-primary/40 transition-colors"
+                  >
+                    <div className="aspect-video overflow-hidden bg-muted relative">
+                      <img src={video.thumbnail} alt={video.title || "Video"} className="w-full h-full object-cover" />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
+                        <div className="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center">
+                          <svg viewBox="0 0 24 24" fill="white" className="w-7 h-7 ml-1"><polygon points="5,3 19,12 5,21" /></svg>
+                        </div>
+                      </div>
+                    </div>
+                    {video.title && (
+                      <div className="p-4 flex items-center justify-between gap-3">
+                        <p className="text-sm font-medium text-foreground/80">{video.title}</p>
+                        <ExternalLink size={14} className="text-muted-foreground shrink-0 group-hover:text-primary transition-colors" />
+                      </div>
+                    )}
+                  </a>
+                ))}
+              </div>
             )}
           </div>
         </motion.div>

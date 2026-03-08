@@ -7,67 +7,76 @@ const caseStudies = [
     title: "Design System Evolution",
     subtitle: "Scaling consistency across 12 product teams",
     tags: ["Systems Design", "Leadership", "Enterprise"],
-    color: "bg-primary/10",
+    year: "2025",
   },
   {
     slug: "onboarding-reimagined",
     title: "Onboarding Reimagined",
     subtitle: "Reducing time-to-value by 60% through empathetic flows",
     tags: ["Product Strategy", "Research", "B2B SaaS"],
-    color: "bg-secondary/20",
+    year: "2024",
   },
   {
     slug: "accessible-checkout",
     title: "Accessible Checkout",
     subtitle: "Making commerce work for everyone",
     tags: ["Accessibility", "E-commerce", "Inclusive Design"],
-    color: "bg-accent",
+    year: "2024",
   },
 ];
 
 const Work = () => {
   return (
-    <section className="py-20">
-      <div className="container max-w-4xl">
+    <section className="py-24">
+      <div className="container max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-24"
         >
-          <h1 className="font-serif text-4xl sm:text-5xl font-light text-foreground mb-4">
+          <p className="text-sm font-medium tracking-[0.2em] uppercase text-muted-foreground mb-4">
             Selected Work
-          </h1>
-          <p className="text-muted-foreground text-lg max-w-xl mb-16">
-            Case studies from my journey designing products that balance 
-            business goals with genuine human needs.
           </p>
+          <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-[0.95]">
+            Case Studies
+          </h1>
         </motion.div>
 
-        <div className="space-y-8">
+        <div className="space-y-0 divide-y divide-border">
           {caseStudies.map((study, i) => (
             <motion.div
               key={study.slug}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
+              transition={{ duration: 0.6, delay: 0.1 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
               <Link
                 to={`/work/${study.slug}`}
-                className="group block border border-border rounded-sm overflow-hidden hover:border-primary/40 transition-all"
+                className="group block py-12 lg:py-16"
               >
-                <div className={`${study.color} h-48 sm:h-56 flex items-end p-8`}>
-                  <div>
-                    <h2 className="font-serif text-2xl sm:text-3xl font-medium text-foreground group-hover:text-primary transition-colors">
+                <div className="grid lg:grid-cols-12 gap-6 items-start">
+                  <div className="lg:col-span-1">
+                    <span className="text-xs font-mono text-muted-foreground">{study.year}</span>
+                  </div>
+                  <div className="lg:col-span-7">
+                    <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-foreground group-hover:translate-x-2 transition-transform duration-500 ease-out">
                       {study.title}
                     </h2>
-                    <p className="mt-2 text-muted-foreground">{study.subtitle}</p>
+                    <p className="mt-3 text-muted-foreground text-lg">{study.subtitle}</p>
+                  </div>
+                  <div className="lg:col-span-4 lg:text-right">
+                    {/* Image placeholder */}
+                    <div className="aspect-[16/10] bg-accent overflow-hidden">
+                      <div className="w-full h-full bg-muted/30 group-hover:scale-105 transition-transform duration-700 ease-out grain" />
+                    </div>
                   </div>
                 </div>
-                <div className="px-8 py-4 flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mt-6 lg:ml-[calc(100%/12+1.5rem)]">
                   {study.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs font-medium px-3 py-1 rounded-full bg-muted text-muted-foreground"
+                      className="text-xs font-medium px-3 py-1 border border-border text-muted-foreground"
                     >
                       {tag}
                     </span>

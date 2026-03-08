@@ -88,7 +88,7 @@ const Layout = ({ children }: {children: React.ReactNode;}) => {
 
       <footer className="border-t border-border py-12">
         <div className="container text-center text-sm text-muted-foreground">
-          <p className="font-serif text-base italic">Made with care by Tessrah Designs on Lovable ❤️</p>
+          <p className="font-serif text-base italic">Designed with care · Built with intention</p>
           <p className="mt-2">© {new Date().getFullYear()}</p>
         </div>
       </footer>

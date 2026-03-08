@@ -58,20 +58,27 @@ const About = () => {
             </div>
           </div>
 
-          {/* Beyond Design */}
+          {/* Advocacy */}
           <div>
             <h2 className="font-serif text-sm uppercase tracking-widest text-primary mb-6">
-              Beyond Design
+              Advocacy & Community
             </h2>
             <p className="text-foreground leading-relaxed mb-3">
               I volunteer with organizations focused on digital accessibility and 
               mentoring emerging designers from underrepresented backgrounds. I believe 
               in using design skills to serve communities, not just companies.
             </p>
-            <p className="text-muted-foreground leading-relaxed mb-6">
+            <p className="text-muted-foreground leading-relaxed">
               I've spoken at local meetups about inclusive design practices and 
               contributed to open-source accessibility tooling.
             </p>
+          </div>
+
+          {/* Life outside work */}
+          <div>
+            <h2 className="font-serif text-sm uppercase tracking-widest text-primary mb-6">
+              Beyond Design
+            </h2>
             <p className="text-foreground leading-relaxed mb-6">
               When I'm not designing, you'll find me exploring botanical illustration, 
               reading Japanese literature, tending to my growing collection of houseplants, 

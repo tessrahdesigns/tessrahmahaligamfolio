@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
 
 const experiments = [
   {
@@ -32,57 +33,89 @@ const experiments = [
   },
 ];
 
+const container = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { staggerChildren: 0.1 } },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
+};
+
 const Experiments = () => {
   return (
-    <section className="py-20">
-      <div className="container max-w-4xl">
+    <section className="py-24">
+      <div className="container max-w-5xl">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
+          className="mb-20"
         >
-          <h1 className="font-serif text-4xl sm:text-5xl font-light text-foreground mb-4">
-            Experiments
-          </h1>
-          <p className="text-muted-foreground text-lg max-w-xl mb-4">
-            A space for learning in public — AI explorations, creative code, 
+          <div className="flex items-center gap-3 mb-6">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-foreground">
+              Experiments
+            </h1>
+            <motion.span
+              animate={{ rotate: [0, 15, -15, 0] }}
+              transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+              className="text-2xl"
+            >
+              ✦
+            </motion.span>
+          </div>
+          <p className="text-muted-foreground text-lg max-w-xl mb-4 leading-relaxed">
+            A space for learning in public — AI explorations, creative code,
             and design experiments that don't need to be polished.
           </p>
-          <span className="inline-block text-xs font-medium px-3 py-1 rounded-full bg-secondary/30 text-secondary-foreground mb-16">
+          <span className="inline-block text-xs font-medium px-3 py-1.5 rounded-full bg-secondary/20 text-secondary-foreground">
             ✦ Learning in Public
           </span>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 gap-6">
-          {experiments.map((exp, i) => (
-            <Link key={exp.slug} to={`/experiments/${exp.slug}`}>
-            <motion.article
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
-              className="border border-border rounded-sm p-6 hover:border-primary/30 transition-colors"
-            >
-              <time className="text-xs text-muted-foreground">{exp.date}</time>
-              <h2 className="font-serif text-xl font-medium text-foreground mt-2 mb-3">
-                {exp.title}
-              </h2>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                {exp.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {exp.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs px-2 py-0.5 rounded-full bg-accent text-accent-foreground"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </motion.article>
-            </Link>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="grid sm:grid-cols-2 gap-6"
+        >
+          {experiments.map((exp) => (
+            <motion.div key={exp.slug} variants={item}>
+              <Link to={`/experiments/${exp.slug}`} className="group block h-full">
+                <motion.article
+                  whileHover={{ y: -4 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                  className="h-full border border-border rounded-sm p-8 hover:border-primary/30 hover:shadow-md transition-all duration-300 bg-card"
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <time className="text-xs text-muted-foreground">{exp.date}</time>
+                    <ArrowUpRight
+                      size={16}
+                      className="text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300"
+                    />
+                  </div>
+                  <h2 className="font-serif text-xl font-medium text-foreground group-hover:text-primary transition-colors duration-300 mb-3">
+                    {exp.title}
+                  </h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                    {exp.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {exp.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs px-2.5 py-1 rounded-full bg-accent text-accent-foreground"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </motion.article>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

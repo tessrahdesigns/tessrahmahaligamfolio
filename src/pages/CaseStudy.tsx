@@ -1,9 +1,13 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
+import caseOneaudi from "@/assets/case-oneaudi.jpg";
+import caseDealerTheme from "@/assets/case-dealer-theme.jpg";
 
 const caseStudyData: Record<string, {
   title: string;
+  category: string;
+  image: string;
   context: string;
   role: string;
   process: string;
@@ -11,33 +15,38 @@ const caseStudyData: Record<string, {
   outcomes: string;
   reflections: string;
 }> = {
-  "design-system-evolution": {
-    title: "Design System Evolution",
-    context: "Our product suite had grown to 12 teams shipping independently, leading to fragmented user experiences and duplicated effort. The design system needed to evolve from a component library into a living, governed ecosystem.",
-    role: "Lead designer responsible for system architecture, governance model, and cross-team adoption strategy. Partnered closely with engineering leads and product directors.",
-    process: "Started with an extensive audit of existing patterns across all products. Conducted stakeholder interviews to understand pain points. Ran collaborative workshops to align on principles before touching any components.",
-    decisions: "Chose to build on existing foundations rather than starting from scratch — respecting the work teams had already invested. Prioritized tokens and primitives over prescriptive components to give teams flexibility.",
-    outcomes: "Achieved 90% adoption across teams within 6 months. Reduced design-to-dev handoff time by 40%. Most importantly, users reported a more cohesive experience across products.",
-    reflections: "The hardest part wasn't the design — it was the change management. Building relationships and trust with each team mattered more than having the perfect component API.",
+  "oneaudi-digital-dealership": {
+    title: "OneAudi Digital Dealership",
+    category: "Automotive / Enterprise",
+    image: caseOneaudi,
+    context: "Audi's dealer ecosystem was fragmented — thousands of dealership websites globally were running on outdated platforms with inconsistent branding, poor performance, and disconnected customer journeys. The business needed a unified platform that could scale across markets while giving dealers enough flexibility to feel ownership of their digital presence.",
+    role: "UX Designer responsible for the dealer-facing experience, working within a cross-functional team of developers, product managers, and stakeholders across multiple markets. I led the design of the platform's component system and customer journey flows.",
+    process: "Started with extensive stakeholder interviews across multiple dealer markets to understand pain points. Conducted competitive analysis of automotive digital retail platforms. Created journey maps for both dealers (admin experience) and end customers (browsing/buying). Ran iterative design sprints with rapid prototyping and user testing with actual dealership staff.",
+    decisions: "Adopted a MACH architecture approach (Microservices, API-first, Cloud-native, Headless) to ensure scalability and future-proofing. Designed a modular component system that maintained Audi's premium brand standards while allowing regional customization. Prioritized performance optimization from the start, treating page speed as a core UX metric rather than an afterthought.",
+    outcomes: "Improved page speed by 400% across dealership sites. Enabled a seamless customer journey across thousands of sites globally. Unified the fragmented dealer ecosystem under a consistent, scalable design system. Reduced time-to-market for new dealer site launches significantly.",
+    reflections: "This project taught me the complexity of enterprise-scale design — where the user isn't just the end customer, but also the dealership staff, regional marketing teams, and global brand guardians. The biggest challenge was balancing global consistency with local flexibility. The solution was building a robust design system with clear guardrails rather than rigid templates.",
   },
-  "onboarding-reimagined": {
-    title: "Onboarding Reimagined",
-    context: "New users were taking an average of 14 days to reach their first moment of value. The existing onboarding was feature-focused rather than outcome-focused, leaving users overwhelmed.",
-    role: "Senior product designer working with a PM and two engineers. Led research, ideation, and design execution.",
-    process: "Mapped the existing journey end-to-end. Ran 20 user interviews focusing on the emotional experience of starting. Identified three distinct user archetypes with different needs and motivations.",
-    decisions: "Designed a branching onboarding that adapted based on stated goals rather than a one-size-fits-all wizard. Kept it minimal — just enough structure to guide without constraining.",
-    outcomes: "Time-to-value decreased by 60%. Activation rate improved by 35%. Qualitative feedback shifted from 'confusing' to 'it felt like the product understood me.'",
-    reflections: "This project reinforced my belief that the best onboarding doesn't feel like onboarding at all. It feels like a conversation.",
+  "dealer-theme-activation": {
+    title: "Dealer Theme Activation Platform",
+    category: "Automotive / Backend System",
+    image: caseDealerTheme,
+    context: "Audi loaner vehicles feature a Multimedia Interface (MMI) screen that can display dealer-specific branded themes. However, the process for managing and activating these themes was manual, fragmented, and error-prone. Dealerships and admins needed a streamlined backend system to manage branded imagery and QR codes that link customers to dealership inventory pages.",
+    role: "UX/UI Designer responsible for the full admin experience. Worked closely with backend engineers and product owners to translate complex business logic into intuitive user flows. Designed within the Adobe Spectrum design system to maintain consistency with Audi's internal tooling ecosystem.",
+    process: "Mapped the existing manual workflow to understand pain points and bottlenecks. Conducted interviews with dealership admins and regional managers to understand their mental models. Created detailed user flows for theme creation, preview, approval, and activation. Designed high-fidelity prototypes in Figma using Adobe Spectrum components, and validated through moderated usability testing sessions.",
+    decisions: "Chose Adobe Spectrum as the design framework to align with Audi's internal admin tool ecosystem. Designed a multi-step theme builder with live preview capability so admins could see exactly how themes would appear on the MMI screen. Built in a QR code generator that automatically links to the dealership's inventory page. Implemented role-based access so regional admins and individual dealerships had appropriate levels of control.",
+    outcomes: "Streamlined the theme activation process from days to minutes. Enabled dealerships to independently manage their branded vehicle themes without requiring technical support. Reduced errors in theme deployment through built-in validation and preview features. Increased adoption of branded loaner vehicle themes across the dealer network.",
+    reflections: "This project reinforced the importance of designing for the \"unsexy\" backend systems. The end users — dealership admins — aren't typically the focus of design attention, but their experience directly impacts the customer-facing brand. Designing within an existing design system (Adobe Spectrum) was both a constraint and a superpower — it freed me to focus on information architecture and user flows rather than visual design decisions.",
   },
-  "accessible-checkout": {
-    title: "Accessible Checkout",
-    context: "An accessibility audit revealed critical barriers in our checkout flow that excluded users with motor, visual, and cognitive disabilities. This wasn't just a compliance issue — it was a design failure.",
-    role: "Design lead partnering with accessibility specialists and engineering. Advocated for the project at leadership level to secure resourcing.",
-    process: "Conducted testing sessions with users who rely on assistive technologies. Worked closely with our accessibility specialist to understand WCAG requirements beyond the checklist — focusing on real usability.",
-    decisions: "Redesigned the entire flow rather than patching individual issues. Simplified the information architecture, improved error recovery, and ensured every interaction was keyboard and screen-reader friendly.",
-    outcomes: "Passed WCAG 2.1 AA audit. Conversion rate increased 12% across all users — proving that accessible design is better design for everyone.",
-    reflections: "This project changed how I approach every design. Accessibility isn't a feature or a checklist — it's a lens through which all good design should be viewed.",
-  },
+};
+
+const container = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { staggerChildren: 0.1 } },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
 };
 
 const CaseStudy = () => {
@@ -63,8 +72,8 @@ const CaseStudy = () => {
   ];
 
   return (
-    <section className="py-20">
-      <div className="container max-w-3xl">
+    <section className="py-24">
+      <div className="container max-w-4xl">
         <Link
           to="/work"
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-12"
@@ -72,22 +81,39 @@ const CaseStudy = () => {
           <ArrowLeft size={16} /> Back to Work
         </Link>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 16 }}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="font-serif text-4xl sm:text-5xl font-light text-foreground mb-16"
+          transition={{ duration: 0.6 }}
         >
-          {study.title}
-        </motion.h1>
+          <span className="text-xs font-medium text-primary mb-3 block">{study.category}</span>
+          <h1 className="font-serif text-4xl sm:text-5xl font-light text-foreground mb-8">
+            {study.title}
+          </h1>
+        </motion.div>
 
-        <div className="space-y-16">
-          {sections.map((section, i) => (
-            <motion.div
-              key={section.label}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
-            >
+        {/* Hero image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="rounded-sm overflow-hidden mb-20"
+        >
+          <img
+            src={study.image}
+            alt={study.title}
+            className="w-full h-64 sm:h-80 object-cover"
+          />
+        </motion.div>
+
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="space-y-16"
+        >
+          {sections.map((section) => (
+            <motion.div key={section.label} variants={item}>
               <h2 className="font-serif text-sm uppercase tracking-widest text-primary mb-4">
                 {section.label}
               </h2>
@@ -96,7 +122,7 @@ const CaseStudy = () => {
               </p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

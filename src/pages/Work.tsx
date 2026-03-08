@@ -1,28 +1,25 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import caseOneaudi from "@/assets/case-oneaudi.jpg";
+import caseDealerTheme from "@/assets/case-dealer-theme.jpg";
 
 const caseStudies = [
   {
-    slug: "design-system-evolution",
-    title: "Design System Evolution",
-    subtitle: "Scaling consistency across 12 product teams",
-    tags: ["Systems Design", "Leadership", "Enterprise"],
-    color: "bg-primary/10",
+    slug: "oneaudi-digital-dealership",
+    title: "OneAudi Digital Dealership",
+    subtitle: "A platform-led transformation that unified Audi's fragmented dealer ecosystem — improving page speed by 400% and enabling a seamless customer journey across thousands of sites globally.",
+    tags: ["Design System", "Scalability", "Enterprise", "MACH Architecture"],
+    category: "Automotive / Enterprise",
+    image: caseOneaudi,
   },
   {
-    slug: "onboarding-reimagined",
-    title: "Onboarding Reimagined",
-    subtitle: "Reducing time-to-value by 60% through empathetic flows",
-    tags: ["Product Strategy", "Research", "B2B SaaS"],
-    color: "bg-secondary/20",
-  },
-  {
-    slug: "accessible-checkout",
-    title: "Accessible Checkout",
-    subtitle: "Making commerce work for everyone",
-    tags: ["Accessibility", "E-commerce", "Inclusive Design"],
-    color: "bg-accent",
+    slug: "dealer-theme-activation",
+    title: "Dealer Theme Activation Platform",
+    subtitle: "A backend admin experience that enables admins and dealerships to manage dealer-specific themes for Audi loaner vehicles — featuring branded imagery and QR codes linking customers to dealership inventory pages.",
+    tags: ["Backend Admin", "B2B", "Adobe Spectrum", "User Flows"],
+    category: "Automotive / Backend System",
+    image: caseDealerTheme,
   },
 ];
 
@@ -50,8 +47,7 @@ const Work = () => {
             Selected Work
           </h1>
           <p className="text-muted-foreground text-lg max-w-xl leading-relaxed">
-            Case studies from my journey designing products that balance
-            business goals with genuine human needs.
+            A showcase of recent work that demonstrates my approach to solving complex design challenges.
           </p>
         </motion.div>
 
@@ -59,9 +55,9 @@ const Work = () => {
           variants={container}
           initial="hidden"
           animate="show"
-          className="space-y-6"
+          className="space-y-8"
         >
-          {caseStudies.map((study, i) => (
+          {caseStudies.map((study) => (
             <motion.div key={study.slug} variants={item}>
               <Link
                 to={`/work/${study.slug}`}
@@ -69,7 +65,14 @@ const Work = () => {
               >
                 {/* Text side */}
                 <div className="p-8 md:p-10 flex flex-col justify-center">
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="text-xs font-medium text-primary mb-3">{study.category}</span>
+                  <h2 className="font-serif text-2xl sm:text-3xl font-medium text-foreground group-hover:text-primary transition-colors duration-300 mb-3">
+                    {study.title}
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed mb-6 text-sm">
+                    {study.subtitle}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {study.tags.map((tag) => (
                       <span
                         key={tag}
@@ -79,26 +82,19 @@ const Work = () => {
                       </span>
                     ))}
                   </div>
-                  <h2 className="font-serif text-2xl sm:text-3xl font-medium text-foreground group-hover:text-primary transition-colors duration-300 mb-3">
-                    {study.title}
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed mb-6">
-                    {study.subtitle}
-                  </p>
                   <motion.div className="flex items-center gap-2 text-sm font-medium text-primary">
-                    <span>Learn more</span>
+                    <span>View Case Study</span>
                     <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform duration-300" />
                   </motion.div>
                 </div>
 
-                {/* Color block side */}
-                <div className={`${study.color} min-h-[200px] md:min-h-[280px] flex items-center justify-center`}>
-                  <motion.span
-                    className="font-serif text-6xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"
-                    whileHover={{ scale: 1.1, rotate: 10 }}
-                  >
-                    ✦
-                  </motion.span>
+                {/* Image side */}
+                <div className="min-h-[220px] md:min-h-[320px] overflow-hidden">
+                  <img
+                    src={study.image}
+                    alt={study.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
                 </div>
               </Link>
             </motion.div>

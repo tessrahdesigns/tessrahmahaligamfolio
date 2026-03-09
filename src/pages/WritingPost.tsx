@@ -101,13 +101,7 @@ I reached out to Jamaal via LinkedIn for an interview, and he was more than happ
         title: "Interview with Jamaal Myers — Part 2",
       },
     ],
-    resources: [
-      {
-        description: "TTC Transit Story Circle — organized by The Discourse Scarborough",
-        url: "https://thediscourse.ca/scarborough/ttc-transit-story-circle",
-        image: diversityPt2Img,
-      },
-    ],
+    resources: [],
   },
   {
     slug: "diversity-of-thought",

@@ -9,14 +9,7 @@ const values = [
   { title: "Impact Driven", desc: "Measuring success through user satisfaction and business outcomes.", icon: "◈" },
 ];
 
-const experience = [
-  {
-    type: "cert",
-    title: "User Experience Designer",
-    org: "Uxcel",
-    period: "Issued Oct 2025 · Expires Oct 2027",
-    desc: "Professional certification validating expertise in UX design principles and methodologies.",
-  },
+const professionalExperience = [
   {
     type: "work",
     title: "User Experience Designer",
@@ -32,13 +25,6 @@ const experience = [
     desc: "Designed intuitive interfaces and conducted user research to optimize product experiences.",
   },
   {
-    type: "edu",
-    title: "Certificate in User Experience Design",
-    org: "University of Toronto",
-    period: "School of Continuing Education",
-    desc: "Comprehensive program covering UX research, interaction design, and usability testing.",
-  },
-  {
     type: "work",
     title: "Graphic Designer",
     org: "10+ Years Experience",
@@ -47,6 +33,22 @@ const experience = [
   },
 ];
 
+const education = [
+  {
+    type: "cert",
+    title: "User Experience Designer",
+    org: "Uxcel",
+    period: "Issued Oct 2025 · Expires Oct 2027",
+    desc: "Professional certification validating expertise in UX design principles and methodologies.",
+  },
+  {
+    type: "edu",
+    title: "Certificate in User Experience Design",
+    org: "University of Toronto",
+    period: "School of Continuing Education",
+    desc: "Comprehensive program covering UX research, interaction design, and usability testing.",
+  },
+];
 const container = {
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { staggerChildren: 0.12 } },
@@ -128,28 +130,24 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Experience & Education */}
+          {/* Professional Experience */}
           <motion.div variants={item}>
             <h2 className="font-serif text-sm uppercase tracking-widest text-primary mb-8">
-              Experience & Education
+              Professional Experience
             </h2>
             <div className="relative">
-              {/* Timeline line */}
               <div className="absolute left-[15px] top-2 bottom-2 w-px bg-border" />
-
               <div className="space-y-8">
-                {experience.map((exp, i) => (
+                {professionalExperience.map((exp, i) => (
                   <motion.div
                     key={i}
                     whileHover={{ x: 4 }}
                     transition={{ type: "spring", stiffness: 300, damping: 25 }}
                     className="relative pl-12"
                   >
-                    {/* Timeline dot */}
                     <div className="absolute left-0 top-1 w-[30px] h-[30px] rounded-full bg-card border-2 border-border flex items-center justify-center">
                       {typeIcon(exp.type)}
                     </div>
-
                     <div className="border border-border rounded-sm bg-card p-6 hover:shadow-md transition-shadow duration-300">
                       <h3 className="font-serif text-lg font-medium text-foreground">{exp.title}</h3>
                       <p className="text-sm font-medium text-primary mt-1">{exp.org}</p>
@@ -160,10 +158,39 @@ const About = () => {
                 ))}
               </div>
             </div>
-
             <p className="text-center text-muted-foreground text-sm mt-10 italic">
               15+ years of design experience spanning graphic design and creating meaningful digital experiences that users love
             </p>
+          </motion.div>
+
+          {/* Education */}
+          <motion.div variants={item}>
+            <h2 className="font-serif text-sm uppercase tracking-widest text-primary mb-8">
+              Education
+            </h2>
+            <div className="relative">
+              <div className="absolute left-[15px] top-2 bottom-2 w-px bg-border" />
+              <div className="space-y-8">
+                {education.map((exp, i) => (
+                  <motion.div
+                    key={i}
+                    whileHover={{ x: 4 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                    className="relative pl-12"
+                  >
+                    <div className="absolute left-0 top-1 w-[30px] h-[30px] rounded-full bg-card border-2 border-border flex items-center justify-center">
+                      {typeIcon(exp.type)}
+                    </div>
+                    <div className="border border-border rounded-sm bg-card p-6 hover:shadow-md transition-shadow duration-300">
+                      <h3 className="font-serif text-lg font-medium text-foreground">{exp.title}</h3>
+                      <p className="text-sm font-medium text-primary mt-1">{exp.org}</p>
+                      <p className="text-xs text-muted-foreground mt-1">{exp.period}</p>
+                      <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{exp.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       </div>

@@ -117,7 +117,7 @@ const Layout = ({ children }: {children: React.ReactNode;}) => {
         <div className="container">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
             
-            <p className="text-xs text-muted-foreground text-center">Vibecoded in Lovable © {new Date().getFullYear()}</p>
+            <p className="text-xs text-muted-foreground text-center"><p className="text-xs text-muted-foreground text-center">Vibecoded in Lovable © Tessrah Designs {new Date().getFullYear()}</p></p>
           </div>
         </div>
       </footer>

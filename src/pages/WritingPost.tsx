@@ -9,6 +9,7 @@ import openDiversityImg from "@/assets/link-open-diversity-data.png";
 import cnbcDiversityImg from "@/assets/link-cnbc-diversity.png";
 import ytJamaalPt1 from "@/assets/yt-jamaal-pt1.jpg";
 import ytJamaalPt2 from "@/assets/yt-jamaal-pt2.jpg";
+import ytMarkNguyen from "@/assets/yt-mark-nguyen.jpg";
 
 interface YouTubeVideo {
   url: string;

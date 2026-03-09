@@ -1,12 +1,50 @@
 import { motion } from "framer-motion";
-import heroFloral from "@/assets/hero-floral.jpg";
 import tessrahHeadshot from "@/assets/tessrah-headshot.jpg";
+import { Briefcase, GraduationCap, Award } from "lucide-react";
 
 const values = [
-  { title: "Empathy First", desc: "Understanding people before solving problems.", icon: "♡" },
-  { title: "Inclusive by Default", desc: "Designing for the margins makes better products for everyone.", icon: "◎" },
-  { title: "Craft Matters", desc: "Details aren't details — they make the design.", icon: "✦" },
-  { title: "Learning in Public", desc: "Sharing the messy, unfinished work of growing.", icon: "◈" },
+  { title: "Empathy First", desc: "Understanding user needs and pain points drives every design decision I make.", icon: "♡" },
+  { title: "Collaboration", desc: "Working closely with teams to create solutions that exceed expectations.", icon: "◎" },
+  { title: "Innovation", desc: "Exploring creative solutions while maintaining usability and accessibility.", icon: "✦" },
+  { title: "Impact Driven", desc: "Measuring success through user satisfaction and business outcomes.", icon: "◈" },
+];
+
+const experience = [
+  {
+    type: "cert",
+    title: "User Experience Designer",
+    org: "Uxcel",
+    period: "Issued Oct 2025 · Expires Oct 2027",
+    desc: "Professional certification validating expertise in UX design principles and methodologies.",
+  },
+  {
+    type: "work",
+    title: "User Experience Designer",
+    org: "BIMM",
+    period: "Dec 2022 – Present · 3 yr",
+    desc: "Leading UX design initiatives and creating user-centered digital experiences for enterprise clients.",
+  },
+  {
+    type: "work",
+    title: "UX/UI Designer",
+    org: "Stacktics",
+    period: "Oct 2021 – Dec 2022 · 1 yr 3 mo",
+    desc: "Designed intuitive interfaces and conducted user research to optimize product experiences.",
+  },
+  {
+    type: "edu",
+    title: "Certificate in User Experience Design",
+    org: "University of Toronto",
+    period: "School of Continuing Education",
+    desc: "Comprehensive program covering UX research, interaction design, and usability testing.",
+  },
+  {
+    type: "work",
+    title: "Graphic Designer",
+    org: "10+ Years Experience",
+    period: "Sep 2009 – Oct 2019 · 10 yr",
+    desc: "Shaped stories into striking visuals through years of creative problem solving.",
+  },
 ];
 
 const container = {
@@ -17,6 +55,12 @@ const container = {
 const item = {
   hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
+};
+
+const typeIcon = (type: string) => {
+  if (type === "edu") return <GraduationCap size={18} className="text-primary" />;
+  if (type === "cert") return <Award size={18} className="text-primary" />;
+  return <Briefcase size={18} className="text-primary" />;
 };
 
 const About = () => {
@@ -51,14 +95,14 @@ const About = () => {
                 >🇨🇦</motion.span>
               </h1>
               <p className="text-lg text-foreground leading-relaxed mb-4">
-                I'm a senior product designer based in Canada who believes that the best
-                digital products are the ones that feel genuinely human. My work sits at
-                the intersection of empathy, systems thinking, and craft.
+                With over 5 years of experience in UX design, I've helped startups and
+                established companies create digital products that users love. My approach
+                combines research, creativity, and strategic thinking to deliver designs
+                that are both beautiful and functional.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I care deeply about accessibility, inclusive design, and creating space
-                for people who are often overlooked by technology. Design, to me, is an
-                act of care.
+                I believe great design is invisible. It guides users naturally, anticipates
+                their needs, and creates delightful moments that keep them coming back.
               </p>
             </div>
           </motion.div>
@@ -84,45 +128,42 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Advocacy */}
+          {/* Experience & Education */}
           <motion.div variants={item}>
-            <h2 className="font-serif text-sm uppercase tracking-widest text-primary mb-6">
-              Advocacy & Community
+            <h2 className="font-serif text-sm uppercase tracking-widest text-primary mb-8">
+              Experience & Education
             </h2>
-            <div className="bg-card border border-border rounded-sm p-8">
-              <p className="text-foreground leading-relaxed mb-3">
-                I volunteer with organizations focused on digital accessibility and
-                mentoring emerging designers from underrepresented backgrounds. I believe
-                in using design skills to serve communities, not just companies.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                I've spoken at local meetups about inclusive design practices and
-                contributed to open-source accessibility tooling.
-              </p>
-            </div>
-          </motion.div>
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-[15px] top-2 bottom-2 w-px bg-border" />
 
-          {/* Life outside work */}
-          <motion.div variants={item}>
-            <h2 className="font-serif text-sm uppercase tracking-widest text-primary mb-6">
-              Beyond Design
-            </h2>
-            <p className="text-foreground leading-relaxed mb-8">
-              When I'm not designing, you'll find me exploring botanical illustration,
-              reading Japanese literature, tending to my growing collection of houseplants,
-              or wandering through galleries and bookshops.
+              <div className="space-y-8">
+                {experience.map((exp, i) => (
+                  <motion.div
+                    key={i}
+                    whileHover={{ x: 4 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                    className="relative pl-12"
+                  >
+                    {/* Timeline dot */}
+                    <div className="absolute left-0 top-1 w-[30px] h-[30px] rounded-full bg-card border-2 border-border flex items-center justify-center">
+                      {typeIcon(exp.type)}
+                    </div>
+
+                    <div className="border border-border rounded-sm bg-card p-6 hover:shadow-md transition-shadow duration-300">
+                      <h3 className="font-serif text-lg font-medium text-foreground">{exp.title}</h3>
+                      <p className="text-sm font-medium text-primary mt-1">{exp.org}</p>
+                      <p className="text-xs text-muted-foreground mt-1">{exp.period}</p>
+                      <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{exp.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            <p className="text-center text-muted-foreground text-sm mt-10 italic">
+              15+ years of design experience spanning graphic design and creating meaningful digital experiences that users love
             </p>
-            <motion.div
-              whileHover={{ scale: 1.01 }}
-              transition={{ type: "spring", stiffness: 200, damping: 20 }}
-              className="rounded-sm overflow-hidden"
-            >
-              <img
-                src={heroFloral}
-                alt="Watercolor botanical illustration with cherry blossoms and forget-me-nots"
-                className="w-full h-56 object-cover object-center opacity-70 hover:opacity-90 transition-opacity duration-500"
-              />
-            </motion.div>
           </motion.div>
         </motion.div>
       </div>

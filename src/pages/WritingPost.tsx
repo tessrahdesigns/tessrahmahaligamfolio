@@ -33,6 +33,7 @@ interface Post {
   tags?: string[];
   heroImage?: string;
   heroCaption?: string;
+  heroCta?: { label: string; url: string };
   content: string;
   pullQuote?: string;
   resources?: ExternalResource[];
@@ -71,6 +72,7 @@ When it comes to the actual work, I don't believe in designing in a bubble. I'm 
     tags: ["Diversity", "Blackhistorymonth", "Inclusion", "POC", "Personal development"],
     heroImage: diversityPt2Img,
     heroCaption: "Pulling from TTC transit story circle — via The Discourse Scarborough.",
+    heroCta: { label: "Read the Discourse article", url: "https://thediscourse.ca/scarborough/ttc-transit-story-circle" },
     content: `In 2020, with the wave of Black Lives Matter happening for the second time in the USA, there have been many stories from people of colour coming to light across North America. Part 1 of this series focused on my personal story as a designer in Toronto encountering roadblocks from entering the design industry as a POC woman. For Part 2 I wanted to hear a POC man's perspective of what diversity of thought means to him — as well as how he is trying to create social change.
 
 ## Welcome to Jamaal Myers
@@ -99,13 +101,7 @@ I reached out to Jamaal via LinkedIn for an interview, and he was more than happ
         title: "Interview with Jamaal Myers — Part 2",
       },
     ],
-    resources: [
-      {
-        description: "TTC Transit Story Circle — organized by The Discourse Scarborough",
-        url: "https://thediscourse.ca/scarborough/ttc-transit-story-circle",
-        image: diversityPt2Img,
-      },
-    ],
+    resources: [],
   },
   {
     slug: "diversity-of-thought",
@@ -321,10 +317,21 @@ const WritingPost = () => {
           )}
 
           {post.heroCaption && (
-            <p className="text-xs text-muted-foreground italic mb-12">{post.heroCaption}</p>
+            <p className="text-xs text-muted-foreground italic mb-4">{post.heroCaption}</p>
           )}
 
-          {!post.heroCaption && post.heroImage && <div className="mb-12" />}
+          {post.heroCta && (
+            <a
+              href={post.heroCta.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-medium transition-colors mb-12"
+            >
+              {post.heroCta.label} <ExternalLink size={14} />
+            </a>
+          )}
+
+          {!post.heroCaption && !post.heroCta && post.heroImage && <div className="mb-12" />}
 
           <div className="prose prose-neutral max-w-none border-t border-border pt-12">
             {post.content.split("\n\n").map((paragraph, i) => {

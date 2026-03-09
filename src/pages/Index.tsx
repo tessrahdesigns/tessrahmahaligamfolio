@@ -193,17 +193,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Experiment Highlight */}
+      {/* Playground Highlight */}
       <section className="py-24 border-t border-border">
         <div className="container max-w-5xl">
-          <SectionHeader label="Experiments" to="/experiments" />
+          <SectionHeader label="Playground" to="/playground" />
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Link to="/experiments/nourish-pcos-coach" className="group block">
+            <Link to="/playground/nourish-pcos-coach" className="group block">
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
@@ -231,7 +231,7 @@ const Index = () => {
                     ))}
                   </div>
                   <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    View Experiment <ArrowUpRight size={13} />
+                    View Project <ArrowUpRight size={13} />
                   </span>
                 </div>
               </motion.div>

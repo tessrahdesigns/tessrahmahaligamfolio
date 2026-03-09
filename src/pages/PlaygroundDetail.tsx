@@ -145,4 +145,4 @@ const PlaygroundDetail = () => {
   );
 };
 
-export default ExperimentDetail;
+export default PlaygroundDetail;

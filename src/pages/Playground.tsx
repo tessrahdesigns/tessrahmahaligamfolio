@@ -107,4 +107,4 @@ const Playground = () => {
   );
 };
 
-export default Experiments;
+export default Playground;

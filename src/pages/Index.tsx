@@ -74,8 +74,8 @@ const testimonials = [
   },
   {
     quote: "She doesn't just manage projects; she masters them. Tessrah is a fierce advocate for her clients, combining a sharp attention to detail with a relentless drive to ensure every piece of work delivered is of the highest standard.",
-    name: "Keisha Williams",
-    role: "Product Lead",
+    name: "Hannah Akum",
+    role: "Scrum Master",
     image: testimonial2,
   },
   {

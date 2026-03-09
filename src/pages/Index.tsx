@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
-import { ArrowRight, ArrowUpRight, Download } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Download, Quote } from "lucide-react";
 import tessrahHeadshot from "@/assets/tessrah-headshot.jpg";
 import heroFloral from "@/assets/hero-floral.jpg";
 import caseOneaudi from "@/assets/case-oneaudi.jpg";
@@ -8,6 +8,9 @@ import caseDealerTheme from "@/assets/case-dealer-theme.jpg";
 import ytMarkNguyen from "@/assets/yt-mark-nguyen.jpg";
 import diversityImg from "@/assets/blog-diversity-of-thought.jpg";
 import nourishImage from "@/assets/nourish-pcos.avif";
+import testimonial1 from "@/assets/testimonial-1.jpg";
+import testimonial2 from "@/assets/testimonial-2.jpg";
+import testimonial3 from "@/assets/testimonial-3.jpg";
 
 const container = {
   hidden: { opacity: 0 },
@@ -61,6 +64,27 @@ const featuredPosts = [
 ];
 
 const skills = ["Communication", "Problem-solving", "Collaboration", "Time Management", "Organization", "Empathy"];
+
+const testimonials = [
+  {
+    quote: "Anushree is a powerhouse of productivity. She handles complex projects with a level of calm and precision that is rare to find, ensuring that no detail is overlooked regardless of the pressure.",
+    name: "Rajiv Mehta",
+    role: "Engineering Manager",
+    image: testimonial1,
+  },
+  {
+    quote: "She is the ultimate team player; her willingness to step in and support her colleagues—often going far beyond her own responsibilities—makes her the glue that holds the team together.",
+    name: "Keisha Williams",
+    role: "Product Lead",
+    image: testimonial2,
+  },
+  {
+    quote: "What sets Anushree apart is her boundless curiosity. She doesn't just finish a task; she seeks to understand the 'why' behind it, constantly pushing herself and the team to find more innovative solutions.",
+    name: "David Chen",
+    role: "Design Director",
+    image: testimonial3,
+  },
+];
 
 const SectionHeader = ({ label, to, linkText = "View all" }: { label: string; to: string; linkText?: string }) => (
   <div className="flex items-end justify-between mb-10">
@@ -275,6 +299,46 @@ const Index = () => {
                     </div>
                   </motion.div>
                 </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-24 border-t border-border">
+        <div className="container max-w-5xl">
+          <div className="mb-10">
+            <h2 className="font-serif text-sm uppercase tracking-widest text-primary">What People Say</h2>
+          </div>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-80px" }}
+            className="grid md:grid-cols-3 gap-6"
+          >
+            {testimonials.map((t) => (
+              <motion.div
+                key={t.name}
+                variants={item}
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                className="border border-border rounded-sm p-8 bg-card hover:border-primary/30 hover:shadow-md transition-all duration-300 flex flex-col"
+              >
+                <Quote size={24} className="text-primary/30 mb-4 shrink-0" />
+                <p className="text-sm text-foreground leading-relaxed mb-6 flex-1 italic">
+                  "{t.quote}"
+                </p>
+                <div className="flex items-center gap-3 pt-4 border-t border-border">
+                  <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-border shrink-0">
+                    <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-foreground">{t.name}</p>
+                    <p className="text-xs text-muted-foreground">{t.role}</p>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </motion.div>

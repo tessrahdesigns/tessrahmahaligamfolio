@@ -16,6 +16,8 @@ const experiments = [
 
 Nourish is a conversational nutrition tool built entirely with vibe coding in Lovable. It has three core features:
 
+{{MEAL_PHOTO}}
+
 **Recipe Generator** — Enter ingredients you have on hand and get PCOS-friendly recipes tailored to your cycle phase. The recipes prioritize anti-inflammatory ingredients, blood sugar balance, and hormone support.
 
 **Meal Analyzer** — Describe any meal and get an instant breakdown of how it impacts PCOS symptoms. No calorie counting — instead, it focuses on inflammation markers, insulin response, and nutrient density.

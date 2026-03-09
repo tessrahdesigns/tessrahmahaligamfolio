@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import tessrahHeadshot from "@/assets/tessrah-headshot.jpg";
-import { Briefcase, GraduationCap, Award } from "lucide-react";
+import { Briefcase, GraduationCap, Award, Download } from "lucide-react";
 
 const values = [
 { title: "Empathy First", desc: "Understanding user needs and pain points drives every design decision I make.", icon: "♡" },
@@ -100,10 +100,17 @@ const About = () => {
                 combines <strong>research, creativity, and strategic thinking</strong> to deliver designs
                 that are both beautiful and functional.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 I believe great design is invisible. It guides users naturally, anticipates
                 their needs, and creates delightful moments that keep them coming back.
               </p>
+              <a
+                href="/Tessrah_Mahalingam_CV.pdf"
+                download
+                className="inline-flex items-center gap-2 px-5 py-2.5 border border-primary text-primary text-sm font-medium rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors duration-300">
+                <Download size={16} />
+                Download CV
+              </a>
             </div>
           </motion.div>
 

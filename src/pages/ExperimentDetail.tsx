@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import nourishImage from "@/assets/nourish-pcos.avif";
+import nourishMealPhoto from "@/assets/nourish-meal-photo.png";
 
 const experiments = [
   {
@@ -14,6 +15,8 @@ const experiments = [
     content: `PCOS affects roughly 1 in 10 people with ovaries, and nutrition is one of the most impactful — and most confusing — levers for managing symptoms. I wanted to explore what an AI-powered coach could look like that actually meets people where they are.
 
 Nourish is a conversational nutrition tool built entirely with vibe coding in Lovable. It has three core features:
+
+{{MEAL_PHOTO}}
 
 **Recipe Generator** — Enter ingredients you have on hand and get PCOS-friendly recipes tailored to your cycle phase. The recipes prioritize anti-inflammatory ingredients, blood sugar balance, and hormone support.
 
@@ -86,6 +89,13 @@ const ExperimentDetail = () => {
 
           <div className="prose prose-neutral max-w-none">
             {experiment.content.split("\n\n").map((paragraph, i) => {
+              if (paragraph.trim() === "{{MEAL_PHOTO}}") {
+                return (
+                  <div key={i} className="rounded-sm overflow-hidden mb-6">
+                    <img src={nourishMealPhoto} alt="Photographing a healthy meal" className="w-full h-auto" />
+                  </div>
+                );
+              }
               // Handle bold text within paragraphs
               const parts = paragraph.split(/(\*\*.*?\*\*)/g);
               return (

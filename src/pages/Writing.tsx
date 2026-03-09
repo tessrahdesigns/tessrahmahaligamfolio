@@ -53,6 +53,8 @@ const item = {
 const Writing = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
+  const usedCategories = new Set(posts.map((p) => p.category));
+
   const filteredPosts = activeCategory === "All"
     ? posts
     : posts.filter((post) => post.category === activeCategory);
@@ -75,21 +77,27 @@ const Writing = () => {
           </p>
 
           <div className="flex flex-wrap gap-2">
-            {categories.map((cat) => (
-              <motion.button
-                key={cat}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setActiveCategory(cat)}
-                className={`text-xs font-medium px-4 py-1.5 rounded-full border transition-colors ${
-                  activeCategory === cat
-                    ? "border-primary bg-primary text-primary-foreground"
-                    : "border-border text-muted-foreground hover:border-primary/40 hover:text-primary"
-                }`}
-              >
-                {cat}
-              </motion.button>
-            ))}
+            {categories.map((cat) => {
+              const hasArticles = cat === "All" || usedCategories.has(cat);
+              return (
+                <motion.button
+                  key={cat}
+                  whileHover={hasArticles ? { scale: 1.05 } : {}}
+                  whileTap={hasArticles ? { scale: 0.95 } : {}}
+                  onClick={() => hasArticles && setActiveCategory(cat)}
+                  disabled={!hasArticles}
+                  className={`text-xs font-medium px-4 py-1.5 rounded-full border transition-colors ${
+                    !hasArticles
+                      ? "border-border/50 text-muted-foreground/30 cursor-not-allowed"
+                      : activeCategory === cat
+                        ? "border-primary bg-primary text-primary-foreground"
+                        : "border-border text-muted-foreground hover:border-primary/40 hover:text-primary"
+                  }`}
+                >
+                  {cat}
+                </motion.button>
+              );
+            })}
           </div>
         </motion.div>
 

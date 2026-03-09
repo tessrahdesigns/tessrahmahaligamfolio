@@ -51,7 +51,8 @@ const Writing = () => {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-foreground mb-6">
+           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-foreground mb-6">
+
             Writing
           </h1>
           <p className="text-muted-foreground text-lg max-w-xl leading-relaxed mb-10">

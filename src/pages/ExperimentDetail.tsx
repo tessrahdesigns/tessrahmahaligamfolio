@@ -1,73 +1,30 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 
 const experiments = [
   {
-    slug: "conversational-ui-patterns",
-    title: "Conversational UI Patterns",
-    description: "Exploring how chat interfaces can guide complex decision-making without overwhelming users. Built a prototype using AI-assisted flow design.",
-    tags: ["AI", "Prototyping", "UX"],
-    date: "Feb 2026",
-    content: `Chat interfaces are everywhere now, but most of them still feel like talking to a wall. I wanted to explore what happens when you design a conversational UI that actually guides someone through a complex decision — like choosing a healthcare plan or configuring a product.
-
-The key insight was that good conversational UI isn't about mimicking human speech. It's about progressive disclosure through dialogue. Each response narrows the decision space without the user feeling constrained.
-
-I built a prototype that uses branching logic combined with contextual suggestions. The AI doesn't just answer questions — it asks clarifying ones, surfaces relevant options, and summarizes decisions along the way.
-
-What surprised me most was how much the visual design of the conversation mattered. Spacing, timing of responses, and the way options were presented had a bigger impact on user confidence than the actual content of the responses.
-
-This is still very much a work in progress, but it's shifted how I think about information architecture in general — not just for chat interfaces.`,
-  },
-  {
-    slug: "vibe-coding-with-lovable",
-    title: "Vibe Coding with Lovable",
-    description: "Learning to build with AI-assisted tools — this portfolio itself is an experiment in what's possible when design thinking meets vibe coding.",
-    tags: ["Vibe Coding", "Meta", "Learning"],
+    slug: "nourish-pcos-coach",
+    title: "Nourish — PCOS Coach",
+    description: "An AI-powered nutrition coach for people with PCOS. Features recipe generation, meal analysis, cravings coaching, and cycle-phase awareness — all built with vibe coding.",
+    tags: ["AI", "Health", "Vibe Coding"],
     date: "Mar 2026",
-    content: `This portfolio is itself an experiment. I wanted to see what happens when a designer who thinks in systems and flows uses AI-assisted coding tools to build something real.
+    liveUrl: "https://nourish-my-pcos-coach.lovable.app/",
+    content: `PCOS affects roughly 1 in 10 people with ovaries, and nutrition is one of the most impactful — and most confusing — levers for managing symptoms. I wanted to explore what an AI-powered coach could look like that actually meets people where they are.
 
-The process has been fascinating. Instead of writing code line by line, I've been describing intentions and iterating on outputs. It's closer to art direction than engineering — and that's exactly what makes it powerful for designers.
+Nourish is a conversational nutrition tool built entirely with vibe coding in Lovable. It has three core features:
 
-What I've learned so far:
-- Design thinking translates surprisingly well to prompting. When you can clearly articulate the "why" behind a design decision, the AI can often figure out the "how."
-- Iteration speed is incredible. I can try three different approaches to a layout in the time it would normally take to set up one.
-- The constraints are real but manageable. You still need to understand enough about code to evaluate outputs and course-correct.
+**Recipe Generator** — Enter ingredients you have on hand and get PCOS-friendly recipes tailored to your cycle phase. The recipes prioritize anti-inflammatory ingredients, blood sugar balance, and hormone support.
 
-The biggest shift has been in how I think about prototyping. High-fidelity prototypes used to be expensive. Now they're practically free. That changes the design process fundamentally.`,
-  },
-  {
-    slug: "generative-color-systems",
-    title: "Generative Color Systems",
-    description: "A small tool that generates accessible color palettes from a single seed color, inspired by Japanese seasonal color traditions.",
-    tags: ["Color Theory", "Accessibility", "Japan"],
-    date: "Jan 2026",
-    content: `Japanese culture has a beautiful tradition of seasonal colors — specific hues associated with each time of year, each with poetic names. I wanted to build a tool that captures some of that intentionality while also being practical.
+**Meal Analyzer** — Describe any meal and get an instant breakdown of how it impacts PCOS symptoms. No calorie counting — instead, it focuses on inflammation markers, insulin response, and nutrient density.
 
-The tool takes a single seed color and generates an accessible palette using color theory principles. But instead of purely mathematical relationships, it incorporates the idea of "color moods" — warm/cool shifts that evoke different seasonal feelings.
+**Cravings Coach** — When a craving hits, the coach helps you understand what your body might actually need and suggests satisfying alternatives that won't spike your blood sugar.
 
-Every generated palette is checked against WCAG contrast requirements. The tool shows you which combinations work for text, which work for large elements, and which should only be used as accents.
+The optional cycle phase selector adjusts all recommendations based on where you are in your menstrual cycle — because nutritional needs shift significantly between follicular, ovulatory, luteal, and menstrual phases.
 
-It's a small thing, but it's changed how I approach color in my design work. Instead of starting with a full palette, I start with one color that feels right and let the system generate harmonious companions.
+Building this was an exercise in designing for empathy. The tone had to be warm and non-judgmental. No "good food / bad food" framing. No guilt. Just practical, personalized guidance that respects the complexity of living with a chronic condition.
 
-The Japanese seasonal color reference is still a work in progress — I'm slowly building a database of traditional color names and their associations. Eventually, I'd love for the tool to suggest colors based on the mood or season you're designing for.`,
-  },
-  {
-    slug: "design-journaling-bot",
-    title: "Design Journaling Bot",
-    description: "A daily reflection prompt system that helps designers build a habit of documenting their thinking and decisions.",
-    tags: ["AI", "Reflection", "Craft"],
-    date: "Dec 2025",
-    content: `Most designers I know are terrible at documenting their decisions. I include myself in that group. We make hundreds of small choices every day, and by the time we need to explain them in a case study or portfolio piece, the reasoning has evaporated.
-
-This bot sends a daily prompt — just one question — designed to capture a specific aspect of your design thinking. Questions like:
-- "What's one decision you made today that you're not sure about?"
-- "Did you push back on anything today? What happened?"
-- "What did you learn from a user or stakeholder today?"
-
-The responses build up over time into a personal design journal. It's not polished — it's raw, honest, and incredibly useful when you need to reflect on your growth or build a case study.
-
-I've been using it myself for about three months now. The biggest surprise is how much it's improved my ability to articulate design decisions in real-time, not just in retrospect. The habit of reflection has made me a more intentional designer.`,
+The entire app was built using AI-assisted development — from the UI components to the coaching logic. It's a proof of concept for how vibe coding can accelerate health-tech prototyping when paired with strong design thinking.`,
   },
 ];
 
@@ -106,16 +63,37 @@ const ExperimentDetail = () => {
 
           <p className="text-muted-foreground text-lg mb-6">{experiment.description}</p>
 
-          <div className="flex flex-wrap gap-2 mb-12">
+          <div className="flex flex-wrap items-center gap-3 mb-12">
             {experiment.tags.map((tag) => (
               <span key={tag} className="text-xs px-2 py-0.5 rounded-full bg-accent text-accent-foreground">{tag}</span>
             ))}
+            {experiment.liveUrl && (
+              <a
+                href={experiment.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                View Live <ExternalLink size={12} />
+              </a>
+            )}
           </div>
 
           <div className="prose prose-neutral max-w-none">
-            {experiment.content.split("\n\n").map((paragraph, i) => (
-              <p key={i} className="text-foreground/80 leading-relaxed mb-6">{paragraph}</p>
-            ))}
+            {experiment.content.split("\n\n").map((paragraph, i) => {
+              // Handle bold text within paragraphs
+              const parts = paragraph.split(/(\*\*.*?\*\*)/g);
+              return (
+                <p key={i} className="text-foreground/80 leading-relaxed mb-6">
+                  {parts.map((part, j) => {
+                    if (part.startsWith("**") && part.endsWith("**")) {
+                      return <strong key={j} className="text-foreground font-medium">{part.slice(2, -2)}</strong>;
+                    }
+                    return <span key={j}>{part}</span>;
+                  })}
+                </p>
+              );
+            })}
           </div>
         </motion.div>
       </div>

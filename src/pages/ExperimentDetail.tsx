@@ -28,6 +28,8 @@ The optional cycle phase selector adjusts all recommendations based on where you
 
 {{LIVE_PREVIEW}}
 
+{{KEY_LEARNINGS}}
+
 Building this was an exercise in designing for empathy. The tone had to be warm and non-judgmental. No "good food / bad food" framing. No guilt. Just practical, personalized guidance that respects the complexity of living with a chronic condition.
 
 The entire app was built using AI-assisted development — from the UI components to the coaching logic. It's a proof of concept for how vibe coding can accelerate health-tech prototyping when paired with strong design thinking.`,

@@ -325,7 +325,7 @@ const WritingPost = () => {
               href={post.heroCta.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-pink-500 hover:bg-pink-600 text-white text-sm font-medium transition-colors mb-12"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-medium transition-colors mb-12"
             >
               {post.heroCta.label} <ExternalLink size={14} />
             </a>

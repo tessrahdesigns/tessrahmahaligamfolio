@@ -9,14 +9,7 @@ const values = [
   { title: "Impact Driven", desc: "Measuring success through user satisfaction and business outcomes.", icon: "◈" },
 ];
 
-const experience = [
-  {
-    type: "cert",
-    title: "User Experience Designer",
-    org: "Uxcel",
-    period: "Issued Oct 2025 · Expires Oct 2027",
-    desc: "Professional certification validating expertise in UX design principles and methodologies.",
-  },
+const professionalExperience = [
   {
     type: "work",
     title: "User Experience Designer",
@@ -32,13 +25,6 @@ const experience = [
     desc: "Designed intuitive interfaces and conducted user research to optimize product experiences.",
   },
   {
-    type: "edu",
-    title: "Certificate in User Experience Design",
-    org: "University of Toronto",
-    period: "School of Continuing Education",
-    desc: "Comprehensive program covering UX research, interaction design, and usability testing.",
-  },
-  {
     type: "work",
     title: "Graphic Designer",
     org: "10+ Years Experience",
@@ -47,6 +33,22 @@ const experience = [
   },
 ];
 
+const education = [
+  {
+    type: "cert",
+    title: "User Experience Designer",
+    org: "Uxcel",
+    period: "Issued Oct 2025 · Expires Oct 2027",
+    desc: "Professional certification validating expertise in UX design principles and methodologies.",
+  },
+  {
+    type: "edu",
+    title: "Certificate in User Experience Design",
+    org: "University of Toronto",
+    period: "School of Continuing Education",
+    desc: "Comprehensive program covering UX research, interaction design, and usability testing.",
+  },
+];
 const container = {
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { staggerChildren: 0.12 } },

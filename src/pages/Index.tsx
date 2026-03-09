@@ -20,7 +20,7 @@ const item = {
 const navCards = [
   { to: "/work", title: "Work", desc: "Case studies & product design", emoji: "✦" },
   { to: "/experiments", title: "Experiments", desc: "AI, code & creative play", emoji: "◈" },
-  { to: "/writing", title: "Writing", desc: "Essays & reflections", emoji: "✎" },
+  { to: "/notebook", title: "Notebook", desc: "Essays & reflections", emoji: "✎" },
   { to: "/about", title: "About", desc: "Values, advocacy & life", emoji: "♡" },
 ];
 

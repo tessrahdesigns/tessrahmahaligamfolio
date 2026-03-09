@@ -63,7 +63,7 @@ const Playground = () => {
         >
           {experiments.map((exp) => (
             <motion.div key={exp.slug} variants={item}>
-              <Link to={`/experiments/${exp.slug}`} className="group block h-full">
+              <Link to={`/playground/${exp.slug}`} className="group block h-full">
                 <motion.article
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}

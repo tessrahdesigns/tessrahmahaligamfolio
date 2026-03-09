@@ -281,58 +281,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Snapshot */}
-      <section className="py-24 border-t border-border">
-        <div className="container max-w-5xl">
-          <SectionHeader label="About" to="/about" linkText="Full bio" />
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="grid md:grid-cols-[200px_1fr] gap-10 items-center"
-          >
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="w-44 h-44 rounded-full overflow-hidden ring-4 ring-border mx-auto md:mx-0 lg:hidden block"
-            >
-              <img src={tessrahHeadshot} alt="Tessrah" className="w-full h-full object-cover" />
-            </motion.div>
-            <div className="md:col-span-full">
-              <p className="text-lg text-foreground leading-relaxed mb-4 max-w-2xl">
-                With over 5 years of <strong>experience in UX design</strong>, I combine research, creativity, and strategic thinking to deliver designs that are both beautiful and functional.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {skills.map((s) => (
-                  <span key={s} className="text-xs font-medium px-4 py-1.5 rounded-full border border-border text-muted-foreground">
-                    {s}
-                  </span>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-4">
-                <Link to="/about">
-                  <motion.span
-                    whileHover={{ scale: 1.04, y: -2 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 border border-border text-foreground text-sm font-medium rounded-sm hover:border-primary/40 transition-colors"
-                  >
-                    Read More <ArrowRight size={14} />
-                  </motion.span>
-                </Link>
-                <a
-                  href="/Tessrah_Mahalingam_CV.pdf"
-                  download
-                  className="inline-flex items-center gap-2 px-5 py-2.5 border border-primary text-primary text-sm font-medium rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
-                >
-                  <Download size={14} />
-                  Download CV
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </>
   );
 };

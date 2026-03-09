@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import tessrahHeadshot from "@/assets/tessrah-headshot.jpg";
+
 
 const navItems = [
 { path: "/work", label: "Work" },
@@ -25,9 +25,8 @@ const Layout = ({ children }: {children: React.ReactNode;}) => {
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 15 }}
-              className="w-9 h-9 rounded-full overflow-hidden ring-2 ring-transparent group-hover:ring-primary/40 transition-all duration-300">
-              
-              <img src={tessrahHeadshot} alt="Tessrah" className="w-full h-full object-cover" />
+              className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center ring-2 ring-transparent group-hover:ring-primary/40 transition-all duration-300">
+              <span className="font-serif text-primary text-sm font-medium">T</span>
             </motion.div>
             <span className="font-serif text-lg tracking-tight text-primary">
               Tessrah Designs
@@ -117,14 +116,9 @@ const Layout = ({ children }: {children: React.ReactNode;}) => {
       <footer className="border-t border-border py-16">
         <div className="container">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full overflow-hidden">
-                <img src={tessrahHeadshot} alt="Tessrah" className="w-full h-full object-cover" />
-              </div>
-              <span className="font-serif text-sm text-foreground">Tessrah Designs</span>
-            </div>
+            <span className="font-serif text-sm text-foreground">Tessrah Designs</span>
             <p className="font-serif text-sm italic text-muted-foreground">
-              Designed with care · Built with intention
+              Vibecoded in Lovable
             </p>
             <p className="text-xs text-muted-foreground">© {new Date().getFullYear()}</p>
           </div>

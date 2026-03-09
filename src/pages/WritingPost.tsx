@@ -284,8 +284,8 @@ const WritingPost = () => {
     <section className="py-20">
       <div className="container max-w-3xl">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-          <Link to="/writing" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-10">
-            <ArrowLeft size={16} /> Back to Writing
+           <Link to="/notebook" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-10">
+             <ArrowLeft size={16} /> Back to Notebook
           </Link>
 
           <div className="flex items-center gap-3 text-xs text-muted-foreground mb-4">

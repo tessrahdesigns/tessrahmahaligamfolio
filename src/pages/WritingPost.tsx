@@ -274,7 +274,7 @@ const WritingPost = () => {
       <section className="py-20">
         <div className="container max-w-3xl text-center">
           <h1 className="font-serif text-3xl text-foreground mb-4">Post not found</h1>
-          <Link to="/writing" className="text-primary hover:underline">← Back to Writing</Link>
+          <Link to="/notebook" className="text-primary hover:underline">← Back to Notebook</Link>
         </div>
       </section>
     );

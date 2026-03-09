@@ -67,19 +67,19 @@ const skills = ["Communication", "Problem-solving", "Collaboration", "Time Manag
 
 const testimonials = [
   {
-    quote: "Anushree is a powerhouse of productivity. She handles complex projects with a level of calm and precision that is rare to find, ensuring that no detail is overlooked regardless of the pressure.",
+    quote: "Tessrah is the ultimate hype-woman. Her energy is truly infectious, and she has an incredible ability to lift the mood of any room she walks into, making even the most stressful deadlines feel manageable.",
     name: "Rajiv Mehta",
     role: "Engineering Manager",
     image: testimonial1,
   },
   {
-    quote: "She is the ultimate team player; her willingness to step in and support her colleagues—often going far beyond her own responsibilities—makes her the glue that holds the team together.",
+    quote: "She doesn't just manage projects; she masters them. Tessrah is a fierce advocate for her clients, combining a sharp attention to detail with a relentless drive to ensure every piece of work delivered is of the highest standard.",
     name: "Keisha Williams",
     role: "Product Lead",
     image: testimonial2,
   },
   {
-    quote: "What sets Anushree apart is her boundless curiosity. She doesn't just finish a task; she seeks to understand the 'why' behind it, constantly pushing herself and the team to find more innovative solutions.",
+    quote: "What makes Tessrah so special is her genuine heart. She is the glue that holds the team together, always checking in on her colleagues and offering support, proving that her kindness is just as powerful as her work ethic.",
     name: "David Chen",
     role: "Design Director",
     image: testimonial3,

@@ -2,11 +2,14 @@ import { motion } from "framer-motion";
 import tessrahHeadshot from "@/assets/tessrah-headshot.jpg";
 import { Briefcase, GraduationCap, Award, Download } from "lucide-react";
 
-const values = [
-{ title: "Empathy First", desc: "Understanding user needs and pain points drives every design decision I make.", icon: "♡" },
-{ title: "Collaboration", desc: "Working closely with teams to create solutions that exceed expectations.", icon: "◎" },
-{ title: "Innovation", desc: "Exploring creative solutions while maintaining usability and accessibility.", icon: "✦" },
-{ title: "Impact Driven", desc: "Measuring success through user satisfaction and business outcomes.", icon: "◈" }];
+const skills = [
+  { title: "Communication", icon: "◎" },
+  { title: "Problem-solving", icon: "✦" },
+  { title: "Collaboration", icon: "♡" },
+  { title: "Time Management", icon: "◈" },
+  { title: "Organization", icon: "▣" },
+  { title: "Empathy", icon: "❋" },
+];
 
 
 const professionalExperience = [
@@ -117,19 +120,17 @@ const About = () => {
           {/* Values */}
           <motion.div variants={item}>
             <h2 className="font-serif text-sm uppercase tracking-widest text-primary mb-8">
-              Values
+              Skills
             </h2>
-            <div className="grid sm:grid-cols-2 gap-5">
-              {values.map((v) =>
+            <div className="flex flex-wrap gap-3">
+              {skills.map((s) =>
               <motion.div
-                key={v.title}
-                whileHover={{ y: -4, borderColor: "hsl(var(--primary) / 0.3)" }}
-                transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                className="p-6 border border-border rounded-sm bg-card hover:shadow-md transition-shadow duration-300">
-                
-                  <span className="text-xl mb-3 block opacity-50">{v.icon}</span>
-                  <h3 className="font-serif text-lg font-medium text-foreground mb-1">{v.title}</h3>
-                  <p className="text-sm text-muted-foreground">{v.desc}</p>
+                key={s.title}
+                whileHover={{ scale: 1.08, y: -2 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                className="px-5 py-3 border border-border rounded-full bg-card hover:border-primary/40 hover:shadow-md transition-all duration-300 flex items-center gap-2 cursor-default">
+                  <span className="text-sm opacity-40">{s.icon}</span>
+                  <span className="text-sm font-medium text-foreground">{s.title}</span>
                 </motion.div>
               )}
             </div>

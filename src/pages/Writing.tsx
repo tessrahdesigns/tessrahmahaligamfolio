@@ -53,6 +53,8 @@ const item = {
 const Writing = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
+  const usedCategories = new Set(posts.map((p) => p.category));
+
   const filteredPosts = activeCategory === "All"
     ? posts
     : posts.filter((post) => post.category === activeCategory);

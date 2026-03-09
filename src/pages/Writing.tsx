@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
@@ -50,6 +51,12 @@ const item = {
 };
 
 const Writing = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filteredPosts = activeCategory === "All"
+    ? posts
+    : posts.filter((post) => post.category === activeCategory);
+
   return (
     <section className="py-24">
       <div className="container max-w-3xl">
@@ -73,7 +80,12 @@ const Writing = () => {
                 key={cat}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-xs font-medium px-4 py-1.5 rounded-full border border-border text-muted-foreground hover:border-primary/40 hover:text-primary transition-colors"
+                onClick={() => setActiveCategory(cat)}
+                className={`text-xs font-medium px-4 py-1.5 rounded-full border transition-colors ${
+                  activeCategory === cat
+                    ? "border-primary bg-primary text-primary-foreground"
+                    : "border-border text-muted-foreground hover:border-primary/40 hover:text-primary"
+                }`}
               >
                 {cat}
               </motion.button>
@@ -87,28 +99,39 @@ const Writing = () => {
           animate="show"
           className="space-y-0 divide-y divide-border"
         >
-          {posts.map((post) => (
-            <motion.article key={post.slug} variants={item} className="py-10 first:pt-0 group">
-              <Link to={`/writing/${post.slug}`} className="block">
-                <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
-                  <span>{post.date}</span>
-                  <span className="w-1 h-1 rounded-full bg-border" />
-                  <span>{post.readTime}</span>
-                  <span className="w-1 h-1 rounded-full bg-border" />
-                  <span className="text-primary">{post.category}</span>
-                </div>
-                <h2 className="font-serif text-2xl font-medium text-foreground group-hover:text-primary transition-colors duration-300 mb-3">
-                  {post.title}
-                </h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  {post.excerpt}
-                </p>
-                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Read article <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-              </Link>
-            </motion.article>
-          ))}
+          <AnimatePresence mode="popLayout">
+            {filteredPosts.map((post) => (
+              <motion.article
+                key={post.slug}
+                variants={item}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+                layout
+                className="py-10 first:pt-0 group"
+              >
+                <Link to={`/writing/${post.slug}`} className="block">
+                  <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
+                    <span>{post.date}</span>
+                    <span className="w-1 h-1 rounded-full bg-border" />
+                    <span>{post.readTime}</span>
+                    <span className="w-1 h-1 rounded-full bg-border" />
+                    <span className="text-primary">{post.category}</span>
+                  </div>
+                  <h2 className="font-serif text-2xl font-medium text-foreground group-hover:text-primary transition-colors duration-300 mb-3">
+                    {post.title}
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    {post.excerpt}
+                  </p>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Read article <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-300" />
+                  </span>
+                </Link>
+              </motion.article>
+            ))}
+          </AnimatePresence>
         </motion.div>
       </div>
     </section>

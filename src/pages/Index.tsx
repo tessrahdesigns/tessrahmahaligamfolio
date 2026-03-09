@@ -178,7 +178,7 @@ const Index = () => {
       {/* Featured Work */}
       <section className="py-24 border-t border-border">
         <div className="container max-w-5xl">
-          <SectionHeader label="Selected Work" to="/work" />
+          <SectionHeader label="Case Studies" to="/work" />
           <motion.div
             variants={container}
             initial="hidden"

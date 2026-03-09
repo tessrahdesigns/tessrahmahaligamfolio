@@ -305,6 +305,46 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="py-24 border-t border-border">
+        <div className="container max-w-5xl">
+          <div className="mb-10">
+            <h2 className="font-serif text-sm uppercase tracking-widest text-primary">What People Say</h2>
+          </div>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-80px" }}
+            className="grid md:grid-cols-3 gap-6"
+          >
+            {testimonials.map((t) => (
+              <motion.div
+                key={t.name}
+                variants={item}
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                className="border border-border rounded-sm p-8 bg-card hover:border-primary/30 hover:shadow-md transition-all duration-300 flex flex-col"
+              >
+                <Quote size={24} className="text-primary/30 mb-4 shrink-0" />
+                <p className="text-sm text-foreground leading-relaxed mb-6 flex-1 italic">
+                  "{t.quote}"
+                </p>
+                <div className="flex items-center gap-3 pt-4 border-t border-border">
+                  <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-border shrink-0">
+                    <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-foreground">{t.name}</p>
+                    <p className="text-xs text-muted-foreground">{t.role}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
     </>
   );
 };

@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft, ExternalLink, Smartphone } from "lucide-react";
 import nourishImage from "@/assets/nourish-pcos.avif";
 import nourishMealPhoto from "@/assets/nourish-meal-photo.png";
 

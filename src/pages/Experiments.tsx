@@ -4,32 +4,12 @@ import { ArrowUpRight } from "lucide-react";
 
 const experiments = [
   {
-    slug: "conversational-ui-patterns",
-    title: "Conversational UI Patterns",
-    description: "Exploring how chat interfaces can guide complex decision-making without overwhelming users. Built a prototype using AI-assisted flow design.",
-    tags: ["AI", "Prototyping", "UX"],
-    date: "Feb 2026",
-  },
-  {
-    slug: "vibe-coding-with-lovable",
-    title: "Vibe Coding with Lovable",
-    description: "Learning to build with AI-assisted tools — this portfolio itself is an experiment in what's possible when design thinking meets vibe coding.",
-    tags: ["Vibe Coding", "Meta", "Learning"],
+    slug: "nourish-pcos-coach",
+    title: "Nourish — PCOS Coach",
+    description: "An AI-powered nutrition coach for people with PCOS. Features recipe generation, meal analysis, cravings coaching, and cycle-phase awareness — all built with vibe coding.",
+    tags: ["AI", "Health", "Vibe Coding"],
     date: "Mar 2026",
-  },
-  {
-    slug: "generative-color-systems",
-    title: "Generative Color Systems",
-    description: "A small tool that generates accessible color palettes from a single seed color, inspired by Japanese seasonal color traditions.",
-    tags: ["Color Theory", "Accessibility", "Japan"],
-    date: "Jan 2026",
-  },
-  {
-    slug: "design-journaling-bot",
-    title: "Design Journaling Bot",
-    description: "A daily reflection prompt system that helps designers build a habit of documenting their thinking and decisions.",
-    tags: ["AI", "Reflection", "Craft"],
-    date: "Dec 2025",
+    liveUrl: "https://nourish-my-pcos-coach.lovable.app/",
   },
 ];
 

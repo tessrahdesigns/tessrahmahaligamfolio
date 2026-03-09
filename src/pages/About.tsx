@@ -40,7 +40,7 @@ const education = [
   },
   {
     type: "edu",
-    title: "Certificate in User Experience Design",
+    title: "UX Certificate Program",
     org: "University of Toronto",
     link: "https://learn.utoronto.ca/programs-courses/certificates/user-experience-design",
     period: "School of Continuing Education",

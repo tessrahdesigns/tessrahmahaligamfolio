@@ -32,7 +32,7 @@ const professionalExperience = [
 const education = [
   {
     type: "cert",
-    title: "User Experience Designer",
+    title: "Professional Designation as a User Experience Designer",
     org: "Uxcel",
     link: "https://app.uxcel.com/certifications/ux-designer-1?tab=DESCRIPTION",
     period: "Issued Oct 2025 · Expires Oct 2027",

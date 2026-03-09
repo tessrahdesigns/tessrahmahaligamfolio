@@ -73,16 +73,6 @@ const ExperimentDetail = () => {
             {experiment.tags.map((tag) => (
               <span key={tag} className="text-xs px-2 py-0.5 rounded-full bg-accent text-accent-foreground">{tag}</span>
             ))}
-            {experiment.liveUrl && (
-              <a
-                href={experiment.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
-              >
-                View Live <ExternalLink size={12} />
-              </a>
-            )}
           </div>
 
           <div className="rounded-sm overflow-hidden mb-12">

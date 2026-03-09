@@ -2,6 +2,10 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import ytMarkNguyen from "@/assets/yt-mark-nguyen.jpg";
+import diversityPt2Img from "@/assets/blog-diversity-pt2.png";
+import diversityImg from "@/assets/blog-diversity-of-thought.jpg";
+import whatsInANameImg from "@/assets/blog-whats-in-a-name.jpg";
 
 const posts = [
   {
@@ -11,6 +15,7 @@ const posts = [
     date: "March 2021",
     category: "Craft",
     readTime: "4 min",
+    image: ytMarkNguyen,
   },
   {
     slug: "diversity-of-thought-pt2",
@@ -19,6 +24,7 @@ const posts = [
     date: "February 2021",
     category: "Diversity",
     readTime: "6 min",
+    image: diversityPt2Img,
   },
   {
     slug: "diversity-of-thought",
@@ -27,6 +33,7 @@ const posts = [
     date: "February 2021",
     category: "Diversity",
     readTime: "7 min",
+    image: diversityImg,
   },
   {
     slug: "whats-in-a-name",
@@ -35,6 +42,7 @@ const posts = [
     date: "July 2020",
     category: "Inclusion",
     readTime: "4 min",
+    image: whatsInANameImg,
   },
 ];
 

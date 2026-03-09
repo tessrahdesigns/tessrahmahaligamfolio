@@ -33,6 +33,7 @@ interface Post {
   tags?: string[];
   heroImage?: string;
   heroCaption?: string;
+  heroCta?: { label: string; url: string };
   content: string;
   pullQuote?: string;
   resources?: ExternalResource[];

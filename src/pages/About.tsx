@@ -139,13 +139,15 @@ const About = () => {
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
                   className="border border-border rounded-sm bg-card p-5 hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col"
                 >
-                  <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center mb-4">
-                    {typeIcon(exp.type)}
-                  </div>
-                  <h3 className="font-serif text-base font-medium text-foreground">{exp.title}</h3>
-                  <p className="text-sm font-medium text-primary mt-1">{exp.org}</p>
-                  <p className="text-xs text-muted-foreground mt-1 mb-3">{exp.period}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed mt-auto">{exp.desc}</p>
+                  {exp.link ? (
+                    <a href={exp.link} target="_blank" rel="noopener noreferrer" className="font-serif text-base font-medium text-primary hover:underline">
+                      {exp.org}
+                    </a>
+                  ) : (
+                    <h3 className="font-serif text-base font-medium text-primary">{exp.org}</h3>
+                  )}
+                  <p className="text-sm text-foreground mt-1">{exp.title}</p>
+                  <p className="text-xs text-muted-foreground mt-2">{exp.period}</p>
                 </motion.div>
               ))}
             </div>

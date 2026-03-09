@@ -34,6 +34,7 @@ const education = [
     type: "cert",
     title: "User Experience Designer",
     org: "Uxcel",
+    link: "https://app.uxcel.com/certifications/ux-designer-1?tab=DESCRIPTION",
     period: "Issued Oct 2025 · Expires Oct 2027",
     desc: "Professional certification validating expertise in UX design principles and methodologies.",
   },
@@ -41,6 +42,7 @@ const education = [
     type: "edu",
     title: "Certificate in User Experience Design",
     org: "University of Toronto",
+    link: "https://learn.utoronto.ca/programs-courses/certificates/user-experience-design",
     period: "School of Continuing Education",
     desc: "Comprehensive program covering UX research, interaction design, and usability testing.",
   },
@@ -176,7 +178,11 @@ const About = () => {
                     </div>
                     <div className="border border-border rounded-sm bg-card p-6 hover:shadow-md transition-shadow duration-300">
                       <h3 className="font-serif text-lg font-medium text-foreground">{exp.title}</h3>
-                      <p className="text-sm font-medium text-primary mt-1">{exp.org}</p>
+                      {exp.link ? (
+                        <a href={exp.link} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary hover:underline mt-1 inline-block">{exp.org}</a>
+                      ) : (
+                        <p className="text-sm font-medium text-primary mt-1">{exp.org}</p>
+                      )}
                       <p className="text-xs text-muted-foreground mt-1">{exp.period}</p>
                       <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{exp.desc}</p>
                     </div>

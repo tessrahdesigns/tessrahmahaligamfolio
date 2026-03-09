@@ -36,7 +36,7 @@ const Playground = () => {
         >
           <div className="flex items-center gap-3 mb-6">
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-foreground">
-              Experiments
+              Playground
             </h1>
             <motion.span
               animate={{ rotate: [0, 15, -15, 0] }}

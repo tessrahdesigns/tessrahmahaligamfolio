@@ -65,6 +65,27 @@ const featuredPosts = [
 
 const skills = ["Communication", "Problem-solving", "Collaboration", "Time Management", "Organization", "Empathy"];
 
+const testimonials = [
+  {
+    quote: "Anushree is a powerhouse of productivity. She handles complex projects with a level of calm and precision that is rare to find, ensuring that no detail is overlooked regardless of the pressure.",
+    name: "Rajiv Mehta",
+    role: "Engineering Manager",
+    image: testimonial1,
+  },
+  {
+    quote: "She is the ultimate team player; her willingness to step in and support her colleagues—often going far beyond her own responsibilities—makes her the glue that holds the team together.",
+    name: "Keisha Williams",
+    role: "Product Lead",
+    image: testimonial2,
+  },
+  {
+    quote: "What sets Anushree apart is her boundless curiosity. She doesn't just finish a task; she seeks to understand the 'why' behind it, constantly pushing herself and the team to find more innovative solutions.",
+    name: "David Chen",
+    role: "Design Director",
+    image: testimonial3,
+  },
+];
+
 const SectionHeader = ({ label, to, linkText = "View all" }: { label: string; to: string; linkText?: string }) => (
   <div className="flex items-end justify-between mb-10">
     <h2 className="font-serif text-sm uppercase tracking-widest text-primary">{label}</h2>

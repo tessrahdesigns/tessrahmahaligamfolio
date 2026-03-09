@@ -95,9 +95,9 @@ const About = () => {
                 >🇨🇦</motion.span>
               </h1>
               <p className="text-lg text-foreground leading-relaxed mb-4">
-                With over 5 years of experience in UX design, I've helped startups and
+                With over 5 years of <strong>experience in UX design</strong>, I've helped startups and
                 established companies create digital products that users love. My approach
-                combines research, creativity, and strategic thinking to deliver designs
+                combines <strong>research, creativity, and strategic thinking</strong> to deliver designs
                 that are both beautiful and functional.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">

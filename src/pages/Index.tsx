@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Download } from "lucide-react";
 import tessrahHeadshot from "@/assets/tessrah-headshot.jpg";
 import heroFloral from "@/assets/hero-floral.jpg";
+import caseOneaudi from "@/assets/case-oneaudi.jpg";
+import caseDealerTheme from "@/assets/case-dealer-theme.jpg";
+import ytMarkNguyen from "@/assets/yt-mark-nguyen.jpg";
+import diversityImg from "@/assets/blog-diversity-of-thought.jpg";
+import nourishImage from "@/assets/nourish-pcos.avif";
 
 const container = {
   hidden: { opacity: 0 },
@@ -17,68 +22,68 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
 };
 
-const navCards = [
-  { to: "/work", title: "Work", desc: "Case studies & product design", emoji: "✦" },
-  { to: "/experiments", title: "Experiments", desc: "AI, code & creative play", emoji: "◈" },
-  { to: "/notebook", title: "Notebook", desc: "Essays & reflections", emoji: "✎" },
-  { to: "/about", title: "About", desc: "Values, advocacy & life", emoji: "♡" },
+const featuredWork = [
+  {
+    slug: "oneaudi-digital-dealership",
+    title: "OneAudi Digital Dealership",
+    subtitle: "Unified Audi's dealer ecosystem — 400% faster page speed, 25% more vehicle page visits.",
+    tags: ["Design System", "Scalability", "Enterprise"],
+    category: "Automotive / Enterprise",
+    image: caseOneaudi,
+  },
+  {
+    slug: "dealer-theme-activation",
+    title: "Dealer Theme Activation",
+    subtitle: "Backend admin enabling 19 dealers to manage themes on 1500+ vehicles — shipped in 4 weeks.",
+    tags: ["Backend Admin", "B2B", "User Flows"],
+    category: "Automotive / Backend",
+    image: caseDealerTheme,
+  },
 ];
 
-const HoverCard = ({ to, title, desc, emoji, index }: { to: string; title: string; desc: string; emoji: string; index: number }) => {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const rotateX = useTransform(y, [-100, 100], [5, -5]);
-  const rotateY = useTransform(x, [-100, 100], [-5, 5]);
-  const springRotateX = useSpring(rotateX, { stiffness: 300, damping: 30 });
-  const springRotateY = useSpring(rotateY, { stiffness: 300, damping: 30 });
+const featuredPosts = [
+  {
+    slug: "casual-chat-mark-nguyen",
+    title: "Casual Chat w/ Mark Nguyen",
+    excerpt: "On finding creative flow and why the best ideas come from getting everyone in the room.",
+    date: "March 2021",
+    category: "Craft",
+    image: ytMarkNguyen,
+  },
+  {
+    slug: "diversity-of-thought",
+    title: "What is diversity of thought anyways?",
+    excerpt: "Once in 2017, my manager said 'we need more diversity in this workplace'. It's still on my mind.",
+    date: "February 2021",
+    category: "Diversity",
+    image: diversityImg,
+  },
+];
 
-  const handleMouse = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    x.set(e.clientX - rect.left - rect.width / 2);
-    y.set(e.clientY - rect.top - rect.height / 2);
-  };
+const skills = ["Communication", "Problem-solving", "Collaboration", "Time Management", "Organization", "Empathy"];
 
-  return (
-    <motion.div
-      variants={item}
-      onMouseMove={handleMouse}
-      onMouseLeave={() => { x.set(0); y.set(0); }}
-      style={{ rotateX: springRotateX, rotateY: springRotateY, perspective: 800 }}
+const SectionHeader = ({ label, to, linkText = "View all" }: { label: string; to: string; linkText?: string }) => (
+  <div className="flex items-end justify-between mb-10">
+    <h2 className="font-serif text-sm uppercase tracking-widest text-primary">{label}</h2>
+    <Link
+      to={to}
+      className="group inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-primary transition-colors"
     >
-      <Link
-        to={to}
-        className="group block p-8 rounded-sm border border-border bg-card hover:border-primary/40 transition-all duration-300 hover:shadow-lg"
-      >
-        <span className="text-2xl mb-4 block opacity-40 group-hover:opacity-100 transition-opacity duration-300">
-          {emoji}
-        </span>
-        <h3 className="font-serif text-xl font-medium text-foreground group-hover:text-primary transition-colors duration-300">
-          {title}
-        </h3>
-        <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
-        <motion.div
-          className="flex items-center gap-1 mt-4 text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          initial={false}
-        >
-          Explore <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform duration-300" />
-        </motion.div>
-      </Link>
-    </motion.div>
-  );
-};
+      {linkText} <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform duration-300" />
+    </Link>
+  </div>
+);
 
 const Index = () => {
   return (
     <>
       {/* Hero */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-        {/* Subtle background floral */}
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
           <img src={heroFloral} alt="" className="w-full h-full object-cover" aria-hidden="true" />
         </div>
 
         <div className="container relative grid lg:grid-cols-[auto_1fr] gap-16 items-center py-24">
-          {/* Headshot */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -98,7 +103,6 @@ const Index = () => {
             </motion.div>
           </motion.div>
 
-          {/* Text */}
           <motion.div
             variants={container}
             initial="hidden"
@@ -147,27 +151,185 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Quick navigation */}
-      <section className="py-28 border-t border-border">
-        <div className="container">
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-sm font-medium text-muted-foreground mb-10"
-          >
-            Featured work
-          </motion.p>
+      {/* Featured Work */}
+      <section className="py-24 border-t border-border">
+        <div className="container max-w-5xl">
+          <SectionHeader label="Selected Work" to="/work" />
           <motion.div
             variants={container}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            viewport={{ once: true, margin: "-80px" }}
+            className="space-y-6"
           >
-            {navCards.map((card, i) => (
-              <HoverCard key={card.to} {...card} index={i} />
+            {featuredWork.map((study) => (
+              <motion.div key={study.slug} variants={item}>
+                <Link
+                  to={`/work/${study.slug}`}
+                  className="group grid md:grid-cols-[1fr_1.2fr] border border-border rounded-sm overflow-hidden hover:border-primary/40 transition-all duration-300 hover:shadow-lg"
+                >
+                  <div className="p-8 flex flex-col justify-center">
+                    <span className="text-xs font-medium text-primary mb-3">{study.category}</span>
+                    <h3 className="font-serif text-2xl font-medium text-foreground group-hover:text-primary transition-colors duration-300 mb-2">
+                      {study.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">{study.subtitle}</p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {study.tags.map((tag) => (
+                        <span key={tag} className="text-xs font-medium px-3 py-1 rounded-full bg-muted text-muted-foreground">{tag}</span>
+                      ))}
+                    </div>
+                    <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      View Case Study <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-300" />
+                    </span>
+                  </div>
+                  <div className="min-h-[200px] md:min-h-[280px] overflow-hidden">
+                    <img src={study.image} alt={study.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  </div>
+                </Link>
+              </motion.div>
             ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Experiment Highlight */}
+      <section className="py-24 border-t border-border">
+        <div className="container max-w-5xl">
+          <SectionHeader label="Experiments" to="/experiments" />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <Link to="/experiments/nourish-pcos-coach" className="group block">
+              <motion.div
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                className="grid md:grid-cols-2 border border-border rounded-sm overflow-hidden hover:border-primary/30 hover:shadow-lg transition-all duration-300 bg-card"
+              >
+                <div className="aspect-[16/9] md:aspect-auto overflow-hidden">
+                  <img src={nourishImage} alt="Nourish — PCOS Coach" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="p-8 flex flex-col justify-center">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-xs text-muted-foreground">Mar 2026</span>
+                    <span className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-0.5 rounded-full bg-accent text-accent-foreground">
+                      ✦ Learning in Public
+                    </span>
+                  </div>
+                  <h3 className="font-serif text-2xl font-medium text-foreground group-hover:text-primary transition-colors duration-300 mb-3">
+                    Nourish — PCOS Coach
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    An AI-powered nutrition coach for people with PCOS — recipe generation, meal analysis, and cycle-phase awareness, built with vibe coding.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {["AI", "Health", "Vibe Coding"].map((tag) => (
+                      <span key={tag} className="text-xs px-2.5 py-1 rounded-full bg-muted text-muted-foreground">{tag}</span>
+                    ))}
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    View Experiment <ArrowUpRight size={13} />
+                  </span>
+                </div>
+              </motion.div>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Notebook Highlights */}
+      <section className="py-24 border-t border-border">
+        <div className="container max-w-5xl">
+          <SectionHeader label="From the Notebook" to="/notebook" />
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-80px" }}
+            className="grid sm:grid-cols-2 gap-6"
+          >
+            {featuredPosts.map((post) => (
+              <motion.div key={post.slug} variants={item}>
+                <Link to={`/notebook/${post.slug}`} className="group block h-full">
+                  <motion.div
+                    whileHover={{ y: -4 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                    className="h-full border border-border rounded-sm overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 bg-card"
+                  >
+                    <div className="aspect-[16/9] overflow-hidden">
+                      <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
+                        <span>{post.date}</span>
+                        <span className="w-1 h-1 rounded-full bg-border" />
+                        <span className="text-primary">{post.category}</span>
+                      </div>
+                      <h3 className="font-serif text-lg font-medium text-foreground group-hover:text-primary transition-colors duration-300 mb-2">
+                        {post.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{post.excerpt}</p>
+                    </div>
+                  </motion.div>
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* About Snapshot */}
+      <section className="py-24 border-t border-border">
+        <div className="container max-w-5xl">
+          <SectionHeader label="About" to="/about" linkText="Full bio" />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="grid md:grid-cols-[200px_1fr] gap-10 items-center"
+          >
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="w-44 h-44 rounded-full overflow-hidden ring-4 ring-border mx-auto md:mx-0 lg:hidden block"
+            >
+              <img src={tessrahHeadshot} alt="Tessrah" className="w-full h-full object-cover" />
+            </motion.div>
+            <div className="md:col-span-full">
+              <p className="text-lg text-foreground leading-relaxed mb-4 max-w-2xl">
+                With over 5 years of <strong>experience in UX design</strong>, I combine research, creativity, and strategic thinking to deliver designs that are both beautiful and functional.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {skills.map((s) => (
+                  <span key={s} className="text-xs font-medium px-4 py-1.5 rounded-full border border-border text-muted-foreground">
+                    {s}
+                  </span>
+                ))}
+              </div>
+              <div className="flex flex-wrap gap-4">
+                <Link to="/about">
+                  <motion.span
+                    whileHover={{ scale: 1.04, y: -2 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 border border-border text-foreground text-sm font-medium rounded-sm hover:border-primary/40 transition-colors"
+                  >
+                    Read More <ArrowRight size={14} />
+                  </motion.span>
+                </Link>
+                <a
+                  href="/Tessrah_Mahalingam_CV.pdf"
+                  download
+                  className="inline-flex items-center gap-2 px-5 py-2.5 border border-primary text-primary text-sm font-medium rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
+                >
+                  <Download size={14} />
+                  Download CV
+                </a>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>

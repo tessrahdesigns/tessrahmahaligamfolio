@@ -64,8 +64,7 @@ const Writing = () => {
             📓 Notebook
            </h1>
           <p className="text-muted-foreground text-lg max-w-xl leading-relaxed mb-10">
-            Long-form essays on design, craft, leadership, and the
-            things I'm still figuring out.
+            Design, craft, leadership, and the things I'm still figuring out.
           </p>
 
           <div className="flex flex-wrap gap-2">

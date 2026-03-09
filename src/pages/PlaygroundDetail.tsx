@@ -38,7 +38,7 @@ The entire app was built using AI-assisted development — from the UI component
   },
 ];
 
-const ExperimentDetail = () => {
+const PlaygroundDetail = () => {
   const { slug } = useParams();
   const experiment = experiments.find((e) => e.slug === slug);
 
@@ -46,8 +46,8 @@ const ExperimentDetail = () => {
     return (
       <section className="py-20">
         <div className="container max-w-3xl text-center">
-          <h1 className="font-serif text-3xl text-foreground mb-4">Experiment not found</h1>
-          <Link to="/experiments" className="text-primary hover:underline">← Back to Experiments</Link>
+          <h1 className="font-serif text-3xl text-foreground mb-4">Project not found</h1>
+          <Link to="/playground" className="text-primary hover:underline">← Back to Playground</Link>
         </div>
       </section>
     );
@@ -57,8 +57,8 @@ const ExperimentDetail = () => {
     <section className="py-20">
       <div className="container max-w-3xl">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-          <Link to="/experiments" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-10">
-            <ArrowLeft size={16} /> Back to Experiments
+          <Link to="/playground" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-10">
+            <ArrowLeft size={16} /> Back to Playground
           </Link>
 
           <div className="flex items-center gap-3 text-xs text-muted-foreground mb-4">
@@ -145,4 +145,4 @@ const ExperimentDetail = () => {
   );
 };
 
-export default ExperimentDetail;
+export default PlaygroundDetail;

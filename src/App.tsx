@@ -7,8 +7,8 @@ import Layout from "./components/Layout";
 import Index from "./pages/Index";
 import Work from "./pages/Work";
 import CaseStudy from "./pages/CaseStudy";
-import Experiments from "./pages/Experiments";
-import ExperimentDetail from "./pages/ExperimentDetail";
+import Playground from "./pages/Playground";
+import PlaygroundDetail from "./pages/PlaygroundDetail";
 import Writing from "./pages/Writing";
 import WritingPost from "./pages/WritingPost";
 import About from "./pages/About";
@@ -27,8 +27,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/work" element={<Work />} />
             <Route path="/work/:slug" element={<CaseStudy />} />
-            <Route path="/experiments" element={<Experiments />} />
-            <Route path="/experiments/:slug" element={<ExperimentDetail />} />
+            <Route path="/playground" element={<Playground />} />
+            <Route path="/playground/:slug" element={<PlaygroundDetail />} />
             <Route path="/notebook" element={<Writing />} />
             <Route path="/notebook/:slug" element={<WritingPost />} />
             <Route path="/about" element={<About />} />

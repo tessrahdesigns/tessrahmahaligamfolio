@@ -24,7 +24,7 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
 };
 
-const Experiments = () => {
+const Playground = () => {
   return (
     <section className="py-24">
       <div className="container max-w-5xl">
@@ -36,7 +36,7 @@ const Experiments = () => {
         >
           <div className="flex items-center gap-3 mb-6">
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-foreground">
-              Experiments
+              Playground
             </h1>
             <motion.span
               animate={{ rotate: [0, 15, -15, 0] }}
@@ -48,7 +48,7 @@ const Experiments = () => {
           </div>
           <p className="text-muted-foreground text-lg max-w-xl mb-4 leading-relaxed">
             A space for learning in public — AI explorations, creative code,
-            and design experiments that don't need to be polished.
+            and design explorations that don't need to be polished.
           </p>
           <span className="inline-block text-xs font-medium px-3 py-1.5 rounded-full bg-secondary/20 text-secondary-foreground">
             ✦ Learning in Public
@@ -63,7 +63,7 @@ const Experiments = () => {
         >
           {experiments.map((exp) => (
             <motion.div key={exp.slug} variants={item}>
-              <Link to={`/experiments/${exp.slug}`} className="group block h-full">
+              <Link to={`/playground/${exp.slug}`} className="group block h-full">
                 <motion.article
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
@@ -107,4 +107,4 @@ const Experiments = () => {
   );
 };
 
-export default Experiments;
+export default Playground;

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import tessrahHeadshot from "@/assets/tessrah-headshot.jpg";
-import { Briefcase, GraduationCap, Award } from "lucide-react";
+import { Briefcase, GraduationCap, Award, Download } from "lucide-react";
 
 const values = [
 { title: "Empathy First", desc: "Understanding user needs and pain points drives every design decision I make.", icon: "♡" },

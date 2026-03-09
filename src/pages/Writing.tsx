@@ -127,7 +127,7 @@ const Writing = () => {
                 layout
                 className="py-10 first:pt-0 group"
               >
-                <Link to={`/writing/${post.slug}`} className="flex gap-6 items-start">
+                <Link to={`/notebook/${post.slug}`} className="flex gap-6 items-start">
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
                       <span>{post.date}</span>

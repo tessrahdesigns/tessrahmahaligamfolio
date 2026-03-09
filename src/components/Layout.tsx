@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import tessrahHeadshot from "@/assets/tessrah-headshot.jpg";
+
 
 const navItems = [
 { path: "/work", label: "Work" },

@@ -2,11 +2,14 @@ import { motion } from "framer-motion";
 import tessrahHeadshot from "@/assets/tessrah-headshot.jpg";
 import { Briefcase, GraduationCap, Award, Download } from "lucide-react";
 
-const values = [
-{ title: "Empathy First", desc: "Understanding user needs and pain points drives every design decision I make.", icon: "♡" },
-{ title: "Collaboration", desc: "Working closely with teams to create solutions that exceed expectations.", icon: "◎" },
-{ title: "Innovation", desc: "Exploring creative solutions while maintaining usability and accessibility.", icon: "✦" },
-{ title: "Impact Driven", desc: "Measuring success through user satisfaction and business outcomes.", icon: "◈" }];
+const skills = [
+  { title: "Communication", icon: "◎" },
+  { title: "Problem-solving", icon: "✦" },
+  { title: "Collaboration", icon: "♡" },
+  { title: "Time Management", icon: "◈" },
+  { title: "Organization", icon: "▣" },
+  { title: "Empathy", icon: "❋" },
+];
 
 
 const professionalExperience = [

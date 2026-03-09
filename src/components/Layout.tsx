@@ -116,14 +116,9 @@ const Layout = ({ children }: {children: React.ReactNode;}) => {
       <footer className="border-t border-border py-16">
         <div className="container">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full overflow-hidden">
-                <img src={tessrahHeadshot} alt="Tessrah" className="w-full h-full object-cover" />
-              </div>
-              <span className="font-serif text-sm text-foreground">Tessrah Designs</span>
-            </div>
+            <span className="font-serif text-sm text-foreground">Tessrah Designs</span>
             <p className="font-serif text-sm italic text-muted-foreground">
-              Designed with care · Built with intention
+              Vibecoded in Lovable
             </p>
             <p className="text-xs text-muted-foreground">© {new Date().getFullYear()}</p>
           </div>

@@ -96,6 +96,7 @@ const Experiments = () => {
                       </span>
                     ))}
                   </div>
+                  </div>
                 </motion.article>
               </Link>
             </motion.div>

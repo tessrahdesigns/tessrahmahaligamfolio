@@ -64,7 +64,7 @@ const ExperimentDetail = () => {
 
           <p className="text-muted-foreground text-lg mb-6">{experiment.description}</p>
 
-          <div className="flex flex-wrap items-center gap-3 mb-12">
+          <div className="flex flex-wrap items-center gap-3 mb-8">
             {experiment.tags.map((tag) => (
               <span key={tag} className="text-xs px-2 py-0.5 rounded-full bg-accent text-accent-foreground">{tag}</span>
             ))}
@@ -78,6 +78,10 @@ const ExperimentDetail = () => {
                 View Live <ExternalLink size={12} />
               </a>
             )}
+          </div>
+
+          <div className="rounded-sm overflow-hidden mb-12">
+            <img src={nourishImage} alt={experiment.title} className="w-full h-auto" />
           </div>
 
           <div className="prose prose-neutral max-w-none">

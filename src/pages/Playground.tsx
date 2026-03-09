@@ -48,7 +48,7 @@ const Playground = () => {
           </div>
           <p className="text-muted-foreground text-lg max-w-xl mb-4 leading-relaxed">
             A space for learning in public — AI explorations, creative code,
-            and design experiments that don't need to be polished.
+            and design explorations that don't need to be polished.
           </p>
           <span className="inline-block text-xs font-medium px-3 py-1.5 rounded-full bg-secondary/20 text-secondary-foreground">
             ✦ Learning in Public

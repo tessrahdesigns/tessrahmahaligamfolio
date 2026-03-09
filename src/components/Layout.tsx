@@ -116,8 +116,8 @@ const Layout = ({ children }: {children: React.ReactNode;}) => {
       <footer className="border-t border-border py-16">
         <div className="container">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-            <span className="font-serif text-sm text-foreground">Tessrah Designs</span>
-            <p className="text-xs text-muted-foreground">Vibecoded in Lovable © {new Date().getFullYear()}</p>
+            
+            <p className="text-xs text-muted-foreground text-center">Vibecoded in Lovable © {new Date().getFullYear()}</p>
           </div>
         </div>
       </footer>

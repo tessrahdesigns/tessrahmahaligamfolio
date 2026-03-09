@@ -7,7 +7,7 @@ import tessrahHeadshot from "@/assets/tessrah-headshot.jpg";
 const navItems = [
   { path: "/work", label: "Work" },
   { path: "/experiments", label: "Experiments" },
-  { path: "/writing", label: "Writing" },
+  { path: "/writing", label: "Notebook" },
   { path: "/about", label: "About" },
 ];
 

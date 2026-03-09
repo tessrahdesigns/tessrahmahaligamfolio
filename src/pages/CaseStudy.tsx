@@ -31,7 +31,7 @@ const caseStudyData: Record<string, CaseStudyMeta> = {
     summary: "A platform-led transformation that unified Audi's fragmented dealer ecosystem — improving page speed by 400% and enabling a seamless customer journey across thousands of sites globally.",
     duration: "12+ months",
     team: "Cross-functional (Design, Engineering, Product, Stakeholders)",
-    tools: ["Figma", "Miro", "JIRA", "Storybook", "Analytics"],
+    tools: ["Figma", "Miro", "JIRA", "Analytics"],
     context: "Audi's dealer ecosystem was fragmented — thousands of dealership websites globally were running on outdated platforms with inconsistent branding, poor performance, and disconnected customer journeys. The business needed a unified platform that could scale across markets while giving dealers enough flexibility to feel ownership of their digital presence.",
     role: "UX Designer responsible for the dealer-facing experience, working within a cross-functional team of developers, product managers, and stakeholders across multiple markets. I led the design of the platform's component system and customer journey flows.",
     process: [

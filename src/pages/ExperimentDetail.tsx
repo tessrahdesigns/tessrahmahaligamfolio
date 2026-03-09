@@ -93,14 +93,6 @@ const ExperimentDetail = () => {
               if (paragraph.trim() === "{{LIVE_PREVIEW}}" && experiment.liveUrl) {
                 return (
                   <div key={i} className="my-10">
-                    <a
-                      href={experiment.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors mb-6"
-                    >
-                      View Live <ExternalLink size={14} />
-                    </a>
                     <div className="mx-auto max-w-[375px] rounded-2xl border-[8px] border-foreground/10 bg-background shadow-xl overflow-hidden">
                       <div className="flex items-center justify-center gap-1.5 py-2 bg-muted/50 border-b border-border">
                         <Smartphone size={12} className="text-muted-foreground" />
@@ -113,7 +105,22 @@ const ExperimentDetail = () => {
                         loading="lazy"
                       />
                     </div>
+                    <div className="flex justify-center mt-6">
+                      <a
+                        href={experiment.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+                      >
+                        View Live <ExternalLink size={14} />
+                      </a>
+                    </div>
                   </div>
+                );
+              }
+              if (paragraph.trim() === "{{KEY_LEARNINGS}}") {
+                return (
+                  <h2 key={i} className="font-serif text-2xl text-foreground font-light mt-10 mb-6">Key Learnings</h2>
                 );
               }
               // Handle bold text within paragraphs

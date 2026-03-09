@@ -317,10 +317,21 @@ const WritingPost = () => {
           )}
 
           {post.heroCaption && (
-            <p className="text-xs text-muted-foreground italic mb-12">{post.heroCaption}</p>
+            <p className="text-xs text-muted-foreground italic mb-4">{post.heroCaption}</p>
           )}
 
-          {!post.heroCaption && post.heroImage && <div className="mb-12" />}
+          {post.heroCta && (
+            <a
+              href={post.heroCta.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-pink-500 hover:bg-pink-600 text-white text-sm font-medium transition-colors mb-12"
+            >
+              {post.heroCta.label} <ExternalLink size={14} />
+            </a>
+          )}
+
+          {!post.heroCaption && !post.heroCta && post.heroImage && <div className="mb-12" />}
 
           <div className="prose prose-neutral max-w-none border-t border-border pt-12">
             {post.content.split("\n\n").map((paragraph, i) => {

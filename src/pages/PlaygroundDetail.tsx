@@ -46,8 +46,8 @@ const PlaygroundDetail = () => {
     return (
       <section className="py-20">
         <div className="container max-w-3xl text-center">
-          <h1 className="font-serif text-3xl text-foreground mb-4">Experiment not found</h1>
-          <Link to="/experiments" className="text-primary hover:underline">← Back to Experiments</Link>
+          <h1 className="font-serif text-3xl text-foreground mb-4">Project not found</h1>
+          <Link to="/playground" className="text-primary hover:underline">← Back to Playground</Link>
         </div>
       </section>
     );

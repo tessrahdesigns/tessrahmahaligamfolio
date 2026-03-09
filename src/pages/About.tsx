@@ -178,7 +178,11 @@ const About = () => {
                     </div>
                     <div className="border border-border rounded-sm bg-card p-6 hover:shadow-md transition-shadow duration-300">
                       <h3 className="font-serif text-lg font-medium text-foreground">{exp.title}</h3>
-                      <p className="text-sm font-medium text-primary mt-1">{exp.org}</p>
+                      {exp.link ? (
+                        <a href={exp.link} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary hover:underline mt-1 inline-block">{exp.org}</a>
+                      ) : (
+                        <p className="text-sm font-medium text-primary mt-1">{exp.org}</p>
+                      )}
                       <p className="text-xs text-muted-foreground mt-1">{exp.period}</p>
                       <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{exp.desc}</p>
                     </div>

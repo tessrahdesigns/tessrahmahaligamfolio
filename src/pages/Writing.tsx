@@ -127,23 +127,34 @@ const Writing = () => {
                 layout
                 className="py-10 first:pt-0 group"
               >
-                <Link to={`/writing/${post.slug}`} className="block">
-                  <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
-                    <span>{post.date}</span>
-                    <span className="w-1 h-1 rounded-full bg-border" />
-                    <span>{post.readTime}</span>
-                    <span className="w-1 h-1 rounded-full bg-border" />
-                    <span className="text-primary">{post.category}</span>
+                <Link to={`/writing/${post.slug}`} className="flex gap-6 items-start">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
+                      <span>{post.date}</span>
+                      <span className="w-1 h-1 rounded-full bg-border" />
+                      <span>{post.readTime}</span>
+                      <span className="w-1 h-1 rounded-full bg-border" />
+                      <span className="text-primary">{post.category}</span>
+                    </div>
+                    <h2 className="font-serif text-2xl font-medium text-foreground group-hover:text-primary transition-colors duration-300 mb-3">
+                      {post.title}
+                    </h2>
+                    <p className="text-muted-foreground leading-relaxed mb-4">
+                      {post.excerpt}
+                    </p>
+                    <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Read article <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-300" />
+                    </span>
                   </div>
-                  <h2 className="font-serif text-2xl font-medium text-foreground group-hover:text-primary transition-colors duration-300 mb-3">
-                    {post.title}
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    {post.excerpt}
-                  </p>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Read article <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-300" />
-                  </span>
+                  {post.image && (
+                    <div className="hidden sm:block flex-shrink-0 w-36 h-24 rounded-lg overflow-hidden">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                  )}
                 </Link>
               </motion.article>
             ))}

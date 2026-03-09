@@ -9,7 +9,7 @@ const caseStudies = [
     slug: "oneaudi-digital-dealership",
     title: "OneAudi Digital Dealership",
     subtitle: "A platform-led transformation that unified Audi's fragmented dealer ecosystem — improving page speed by 400% and enabling a seamless customer journey across thousands of sites globally.",
-    tags: ["Design System", "Scalability", "Enterprise", "MACH Architecture"],
+    tags: ["Design System", "Scalability", "Enterprise"],
     category: "Automotive / Enterprise",
     image: caseOneaudi,
   },

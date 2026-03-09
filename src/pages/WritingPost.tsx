@@ -42,6 +42,18 @@ interface Post {
 
 const posts: Post[] = [
   {
+    slug: "casual-chat-mark-nguyen",
+    title: "Casual Chat w/ User Researcher Mark Nguyen",
+    excerpt: "On finding creative flow, designing collaboratively, and why the best ideas come from getting everyone in the room—not just the 'creative' people.",
+    date: "March 18, 2021",
+    category: "Craft",
+    readTime: "4 min",
+    tags: ["Craft", "Design", "Collaboration", "Interviews"],
+    content: `I've always seen my career as a bit of an evolution—like an instrument that I'm constantly fine-tuning to play the right notes. Moving from my classical training into the digital world was a big shift, but what I've really learned is how much my environment matters to my creativity. I'm a huge believer in finding a "flow" that works with my life, not against it. That's why I love the flexibility of working for myself; in the summer, you'll find me up at 5:00 AM taking a long walk before I even touch my computer. In the winter, I might sleep in a bit later and do my best thinking in the quiet of the evening. Being "heads down" and focused is where the magic happens for me, away from the constant interruptions of a busy office.
+
+When it comes to the actual work, I don't believe in designing in a bubble. I'm a big fan of getting everyone involved in the process—whether you think you're a "creative" person or not. I remember working on a project for a big trade show where we gathered people from every department—sales, marketing, you name it—just to hash out ideas. It was incredible because they saw things I never would have thought of on my own. My favourite part of the job is taking all that raw energy and those big, messy ideas and using my skills to boil them down into something beautiful and simple that actually works. To me, great design isn't just about what I want; it's about listening to your story and turning it into something we're both proud of.`,
+  },
+  {
     slug: "diversity-of-thought-pt2",
     title: "Part 2 of 2: What is diversity of thought anyways? (From a POC woman)",
     excerpt: "For Part 2 I wanted to hear a POC man's perspective of what diversity of thought means to him — as well as how he is trying to create social change.",

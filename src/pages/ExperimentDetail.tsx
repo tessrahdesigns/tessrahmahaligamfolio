@@ -88,6 +88,32 @@ const ExperimentDetail = () => {
                   </div>
                 );
               }
+              if (paragraph.trim() === "{{LIVE_PREVIEW}}" && experiment.liveUrl) {
+                return (
+                  <div key={i} className="my-10">
+                    <a
+                      href={experiment.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors mb-6"
+                    >
+                      View Live <ExternalLink size={14} />
+                    </a>
+                    <div className="mx-auto max-w-[375px] rounded-2xl border-[8px] border-foreground/10 bg-background shadow-xl overflow-hidden">
+                      <div className="flex items-center justify-center gap-1.5 py-2 bg-muted/50 border-b border-border">
+                        <Smartphone size={12} className="text-muted-foreground" />
+                        <span className="text-[10px] text-muted-foreground font-medium">Live Preview</span>
+                      </div>
+                      <iframe
+                        src={experiment.liveUrl}
+                        title={`${experiment.title} preview`}
+                        className="w-full h-[667px] border-0"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                );
+              }
               // Handle bold text within paragraphs
               const parts = paragraph.split(/(\*\*.*?\*\*)/g);
               return (

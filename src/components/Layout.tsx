@@ -32,7 +32,7 @@ const Layout = ({ children }: {children: React.ReactNode;}) => {
             <span className="font-serif text-lg tracking-tight text-primary">
               Tessrah Designs
             </span>
-            <span className="text-muted-foreground text-sm hidden sm:inline">, Canada</span>
+            
           </Link>
 
           {/* Desktop nav */}

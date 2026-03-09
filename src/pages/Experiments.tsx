@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
+import nourishImage from "@/assets/nourish-pcos.avif";
 
 const experiments = [
   {
@@ -66,8 +67,12 @@ const Experiments = () => {
                 <motion.article
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                  className="h-full border border-border rounded-sm p-8 hover:border-primary/30 hover:shadow-md transition-all duration-300 bg-card"
+                  className="h-full border border-border rounded-sm overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 bg-card"
                 >
+                  <div className="aspect-[16/9] overflow-hidden">
+                    <img src={nourishImage} alt={exp.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <div className="p-8">
                   <div className="flex items-center justify-between mb-4">
                     <time className="text-xs text-muted-foreground">{exp.date}</time>
                     <ArrowUpRight
@@ -90,6 +95,7 @@ const Experiments = () => {
                         {tag}
                       </span>
                     ))}
+                  </div>
                   </div>
                 </motion.article>
               </Link>

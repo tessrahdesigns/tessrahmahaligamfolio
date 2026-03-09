@@ -72,6 +72,7 @@ When it comes to the actual work, I don't believe in designing in a bubble. I'm 
     tags: ["Diversity", "Blackhistorymonth", "Inclusion", "POC", "Personal development"],
     heroImage: diversityPt2Img,
     heroCaption: "Pulling from TTC transit story circle — via The Discourse Scarborough.",
+    heroCta: { label: "Read the Discourse article", url: "https://thediscourse.ca/scarborough/ttc-transit-story-circle" },
     content: `In 2020, with the wave of Black Lives Matter happening for the second time in the USA, there have been many stories from people of colour coming to light across North America. Part 1 of this series focused on my personal story as a designer in Toronto encountering roadblocks from entering the design industry as a POC woman. For Part 2 I wanted to hear a POC man's perspective of what diversity of thought means to him — as well as how he is trying to create social change.
 
 ## Welcome to Jamaal Myers

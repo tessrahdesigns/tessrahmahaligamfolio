@@ -135,20 +135,21 @@ const About = () => {
             <h2 className="font-serif text-sm uppercase tracking-widest text-primary mb-8">
               Professional Experience
             </h2>
-            <div className="divide-y divide-border border-y border-border">
+            <div className="flex gap-5 overflow-x-auto pb-4 -mx-4 px-4 snap-x snap-mandatory scrollbar-hide">
               {professionalExperience.map((exp, i) => (
                 <motion.div
                   key={i}
-                  whileHover={{ x: 4 }}
+                  whileHover={{ y: -6 }}
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                  className="grid grid-cols-[1fr_auto] sm:grid-cols-[1fr_1fr_auto] items-baseline gap-x-6 py-5 group cursor-default"
+                  className="min-w-[280px] flex-shrink-0 snap-start border border-border rounded-sm bg-card p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col"
                 >
-                  <div>
-                    <h3 className="font-serif text-base font-medium text-foreground group-hover:text-primary transition-colors">{exp.title}</h3>
-                    <p className="text-sm text-muted-foreground mt-0.5 sm:hidden">{exp.org}</p>
+                  <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center mb-4">
+                    {typeIcon(exp.type)}
                   </div>
-                  <p className="text-sm text-muted-foreground hidden sm:block">{exp.org}</p>
-                  <p className="text-xs text-muted-foreground whitespace-nowrap">{exp.period}</p>
+                  <h3 className="font-serif text-lg font-medium text-foreground">{exp.title}</h3>
+                  <p className="text-sm font-medium text-primary mt-1">{exp.org}</p>
+                  <p className="text-xs text-muted-foreground mt-1 mb-3">{exp.period}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mt-auto">{exp.desc}</p>
                 </motion.div>
               ))}
             </div>

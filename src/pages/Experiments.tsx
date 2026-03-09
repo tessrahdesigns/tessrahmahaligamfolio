@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
+import nourishImage from "@/assets/nourish-pcos.avif";
 
 const experiments = [
   {

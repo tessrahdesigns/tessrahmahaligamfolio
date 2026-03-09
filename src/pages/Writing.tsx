@@ -4,6 +4,14 @@ import { ArrowRight } from "lucide-react";
 
 const posts = [
   {
+    slug: "casual-chat-mark-nguyen",
+    title: "Casual Chat w/ User Researcher Mark Nguyen",
+    excerpt: "On finding creative flow, designing collaboratively, and why the best ideas come from getting everyone in the room—not just the 'creative' people.",
+    date: "March 2021",
+    category: "Craft",
+    readTime: "4 min",
+  },
+  {
     slug: "diversity-of-thought-pt2",
     title: "Part 2 of 2: What is diversity of thought anyways? (From a POC woman)",
     excerpt: "For Part 2 I wanted to hear a POC man's perspective of what diversity of thought means to him — as well as how he is trying to create social change.",

@@ -65,7 +65,13 @@ const Work = () => {
               >
                 {/* Text side */}
                 <div className="p-8 md:p-10 flex flex-col justify-center">
-                  <span className="text-xs font-medium text-primary mb-3">{study.category}</span>
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-xs font-medium text-primary">{study.category}</span>
+                    <span className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      Live
+                    </span>
+                  </div>
                   <h2 className="font-serif text-2xl sm:text-3xl font-medium text-foreground group-hover:text-primary transition-colors duration-300 mb-3">
                     {study.title}
                   </h2>

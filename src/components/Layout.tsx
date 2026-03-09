@@ -28,8 +28,8 @@ const Layout = ({ children }: {children: React.ReactNode;}) => {
 
 
             
-            <span className="font-serif text-lg tracking-tight text-primary">
-              Tessrah Designs
+            <span className="font-serif text-lg tracking-tight text-primary">Tessrah Mahalingam
+
             </span>
             
           </Link>

@@ -11,25 +11,21 @@ const values = [
 
 const professionalExperience = [
   {
-    type: "work",
     title: "User Experience Designer",
     org: "BIMM",
-    period: "Dec 2022 – Present · 3 yr",
-    desc: "Leading UX design initiatives and creating user-centered digital experiences for enterprise clients.",
+    link: "https://bimm.com/",
+    period: "Dec 2022 – Feb 2026",
   },
   {
-    type: "work",
     title: "UX/UI Designer",
     org: "Stacktics",
-    period: "Oct 2021 – Dec 2022 · 1 yr 3 mo",
-    desc: "Designed intuitive interfaces and conducted user research to optimize product experiences.",
+    link: "https://stacktics.com/",
+    period: "Oct 2021 – Dec 2022",
   },
   {
-    type: "work",
     title: "Graphic Designer",
     org: "10+ Years Experience",
-    period: "Sep 2009 – Oct 2019 · 10 yr",
-    desc: "Shaped stories into striking visuals through years of creative problem solving.",
+    period: "Sep 2009 – Oct 2019",
   },
 ];
 

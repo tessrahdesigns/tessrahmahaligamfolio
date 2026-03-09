@@ -30,6 +30,8 @@ The optional cycle phase selector adjusts all recommendations based on where you
 
 {{KEY_LEARNINGS}}
 
+I actually suffer from PCOS, and I found myself turning to this app immediately after building it to validate my meal choices. It's already helped me make small but meaningful swaps — opening up a shawarma wrap and eating the filling before the white flour pita, choosing yogurt with raspberries and walnuts instead of reaching for a chocolate bar, and using monk fruit sugar in my evening chai instead of white sugar. I'm looking forward to seeing how these changes end up impacting my overall health.
+
 Building this was an exercise in designing for empathy. The tone had to be warm and non-judgmental. No "good food / bad food" framing. No guilt. Just practical, personalized guidance that respects the complexity of living with a chronic condition.
 
 The entire app was built using AI-assisted development — from the UI components to the coaching logic. It's a proof of concept for how vibe coding can accelerate health-tech prototyping when paired with strong design thinking.`,

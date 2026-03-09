@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
-import { ArrowRight, ArrowUpRight, Download } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Download, Quote } from "lucide-react";
 import tessrahHeadshot from "@/assets/tessrah-headshot.jpg";
 import heroFloral from "@/assets/hero-floral.jpg";
 import caseOneaudi from "@/assets/case-oneaudi.jpg";
@@ -8,6 +8,9 @@ import caseDealerTheme from "@/assets/case-dealer-theme.jpg";
 import ytMarkNguyen from "@/assets/yt-mark-nguyen.jpg";
 import diversityImg from "@/assets/blog-diversity-of-thought.jpg";
 import nourishImage from "@/assets/nourish-pcos.avif";
+import testimonial1 from "@/assets/testimonial-1.jpg";
+import testimonial2 from "@/assets/testimonial-2.jpg";
+import testimonial3 from "@/assets/testimonial-3.jpg";
 
 const container = {
   hidden: { opacity: 0 },

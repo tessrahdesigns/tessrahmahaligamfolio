@@ -68,19 +68,19 @@ const skills = ["Communication", "Problem-solving", "Collaboration", "Time Manag
 const testimonials = [
   {
     quote: "Tessrah is the ultimate hype-woman. Her energy is truly infectious, and she has an incredible ability to lift the mood of any room she walks into, making even the most stressful deadlines feel manageable.",
-    name: "Rajiv Mehta",
-    role: "Engineering Manager",
-    image: testimonial1,
+    name: "Laura Ospina-Davey",
+    role: "UX Lead",
+    image: "/lovable-uploads/f668f5ca-3659-4151-8d14-a37a8b92ee7a.png",
   },
   {
     quote: "She doesn't just manage projects; she masters them. Tessrah is a fierce advocate for her clients, combining a sharp attention to detail with a relentless drive to ensure every piece of work delivered is of the highest standard.",
-    name: "Keisha Williams",
-    role: "Product Lead",
+    name: "Hannah Akum",
+    role: "Scrum Master",
     image: testimonial2,
   },
   {
     quote: "What makes Tessrah so special is her genuine heart. She is the glue that holds the team together, always checking in on her colleagues and offering support, proving that her kindness is just as powerful as her work ethic.",
-    name: "David Chen",
+    name: "Dixon Chan",
     role: "Design Director",
     image: testimonial3,
   },

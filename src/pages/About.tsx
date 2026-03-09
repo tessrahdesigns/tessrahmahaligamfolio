@@ -90,7 +90,7 @@ const About = () => {
             </motion.div>
             <div>
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-foreground mb-6">
-                About Me <motion.span
+                Tessrah Mahalingam <motion.span
                   className="inline-block ml-2"
                   animate={{ rotate: [0, 10, -10, 0] }}
                   transition={{ duration: 2, repeat: Infinity, repeatDelay: 4 }}

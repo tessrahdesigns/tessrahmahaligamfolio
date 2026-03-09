@@ -38,7 +38,7 @@ The entire app was built using AI-assisted development — from the UI component
   },
 ];
 
-const ExperimentDetail = () => {
+const PlaygroundDetail = () => {
   const { slug } = useParams();
   const experiment = experiments.find((e) => e.slug === slug);
 

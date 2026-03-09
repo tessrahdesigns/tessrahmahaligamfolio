@@ -21,13 +21,13 @@ const Layout = ({ children }: {children: React.ReactNode;}) => {
         <div className="container flex items-center justify-between h-20">
           {/* Logo with avatar */}
           <Link to="/" className="flex items-center gap-3 group">
-            <motion.div
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 15 }}
-              className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center ring-2 ring-transparent group-hover:ring-primary/40 transition-all duration-300">
-              <span className="font-serif text-primary text-sm font-medium">T</span>
-            </motion.div>
+            
+
+
+
+
+
+            
             <span className="font-serif text-lg tracking-tight text-primary">
               Tessrah Designs
             </span>

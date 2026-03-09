@@ -89,6 +89,13 @@ const ExperimentDetail = () => {
 
           <div className="prose prose-neutral max-w-none">
             {experiment.content.split("\n\n").map((paragraph, i) => {
+              if (paragraph.trim() === "{{MEAL_PHOTO}}") {
+                return (
+                  <div key={i} className="rounded-sm overflow-hidden mb-6">
+                    <img src={nourishMealPhoto} alt="Photographing a healthy meal" className="w-full h-auto" />
+                  </div>
+                );
+              }
               // Handle bold text within paragraphs
               const parts = paragraph.split(/(\*\*.*?\*\*)/g);
               return (

@@ -5,13 +5,13 @@ import { Menu, X } from "lucide-react";
 import tessrahHeadshot from "@/assets/tessrah-headshot.jpg";
 
 const navItems = [
-  { path: "/work", label: "Work" },
-  { path: "/experiments", label: "Experiments" },
-  { path: "/writing", label: "Notebook" },
-  { path: "/about", label: "About" },
-];
+{ path: "/work", label: "Work" },
+{ path: "/experiments", label: "Experiments" },
+{ path: "/writing", label: "Notebook" },
+{ path: "/about", label: "About" }];
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+
+const Layout = ({ children }: {children: React.ReactNode;}) => {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -25,11 +25,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 15 }}
-              className="w-9 h-9 rounded-full overflow-hidden ring-2 ring-transparent group-hover:ring-primary/40 transition-all duration-300"
-            >
+              className="w-9 h-9 rounded-full overflow-hidden ring-2 ring-transparent group-hover:ring-primary/40 transition-all duration-300">
+              
               <img src={tessrahHeadshot} alt="Tessrah" className="w-full h-full object-cover" />
             </motion.div>
-            <span className="font-serif text-lg tracking-tight text-foreground">
+            <span className="font-serif text-lg tracking-tight text-primary">
               Tessrah Designs
             </span>
             <span className="text-muted-foreground text-sm hidden sm:inline">, Canada</span>
@@ -37,24 +37,24 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className="relative px-4 py-2 text-sm font-medium transition-colors hover:text-primary group"
-              >
+            {navItems.map((item) =>
+            <Link
+              key={item.path}
+              to={item.path}
+              className="relative px-4 py-2 text-sm font-medium transition-colors hover:text-primary group">
+              
                 <span className={location.pathname.startsWith(item.path) ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"}>
                   {item.label}
                 </span>
-                {location.pathname.startsWith(item.path) && (
-                  <motion.div
-                    layoutId="nav-indicator"
-                    className="absolute bottom-0 left-2 right-2 h-0.5 bg-primary rounded-full"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
+                {location.pathname.startsWith(item.path) &&
+              <motion.div
+                layoutId="nav-indicator"
+                className="absolute bottom-0 left-2 right-2 h-0.5 bg-primary rounded-full"
+                transition={{ type: "spring", stiffness: 380, damping: 30 }} />
+
+              }
               </Link>
-            ))}
+            )}
           </nav>
 
           {/* Mobile toggle */}
@@ -62,44 +62,44 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             whileTap={{ scale: 0.9 }}
             className="md:hidden text-foreground p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-          >
+            aria-label="Toggle menu">
+            
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
           </motion.button>
         </div>
 
         {/* Mobile nav */}
         <AnimatePresence>
-          {mobileOpen && (
-            <motion.nav
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden border-t border-border bg-background overflow-hidden"
-            >
+          {mobileOpen &&
+          <motion.nav
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden border-t border-border bg-background overflow-hidden">
+            
               <div className="px-6 py-4 space-y-1">
-                {[{ path: "/", label: "Home" }, ...navItems].map((item, i) => (
-                  <motion.div
-                    key={item.path}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
-                  >
+                {[{ path: "/", label: "Home" }, ...navItems].map((item, i) =>
+              <motion.div
+                key={item.path}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.05 }}>
+                
                     <Link
-                      to={item.path}
-                      onClick={() => setMobileOpen(false)}
-                      className={`block py-3 text-base font-medium transition-colors ${
-                        location.pathname === item.path ? "text-primary" : "text-muted-foreground"
-                      }`}
-                    >
+                  to={item.path}
+                  onClick={() => setMobileOpen(false)}
+                  className={`block py-3 text-base font-medium transition-colors ${
+                  location.pathname === item.path ? "text-primary" : "text-muted-foreground"}`
+                  }>
+                  
                       {item.label}
                     </Link>
                   </motion.div>
-                ))}
+              )}
               </div>
             </motion.nav>
-          )}
+          }
         </AnimatePresence>
       </header>
 
@@ -108,8 +108,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           key={location.pathname}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        >
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
+          
           {children}
         </motion.div>
       </main>
@@ -130,8 +130,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>);
+
 };
 
 export default Layout;

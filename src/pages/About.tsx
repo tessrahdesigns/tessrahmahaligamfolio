@@ -11,25 +11,21 @@ const values = [
 
 const professionalExperience = [
   {
-    type: "work",
     title: "User Experience Designer",
     org: "BIMM",
-    period: "Dec 2022 – Present · 3 yr",
-    desc: "Leading UX design initiatives and creating user-centered digital experiences for enterprise clients.",
+    link: "https://bimm.com/",
+    period: "Dec 2022 – Feb 2026",
   },
   {
-    type: "work",
     title: "UX/UI Designer",
     org: "Stacktics",
-    period: "Oct 2021 – Dec 2022 · 1 yr 3 mo",
-    desc: "Designed intuitive interfaces and conducted user research to optimize product experiences.",
+    link: "https://stacktics.com/",
+    period: "Oct 2021 – Dec 2022",
   },
   {
-    type: "work",
     title: "Graphic Designer",
     org: "10+ Years Experience",
-    period: "Sep 2009 – Oct 2019 · 10 yr",
-    desc: "Shaped stories into striking visuals through years of creative problem solving.",
+    period: "Sep 2009 – Oct 2019",
   },
 ];
 
@@ -143,13 +139,15 @@ const About = () => {
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
                   className="border border-border rounded-sm bg-card p-5 hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col"
                 >
-                  <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center mb-4">
-                    {typeIcon(exp.type)}
-                  </div>
-                  <h3 className="font-serif text-base font-medium text-foreground">{exp.title}</h3>
-                  <p className="text-sm font-medium text-primary mt-1">{exp.org}</p>
-                  <p className="text-xs text-muted-foreground mt-1 mb-3">{exp.period}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed mt-auto">{exp.desc}</p>
+                  {exp.link ? (
+                    <a href={exp.link} target="_blank" rel="noopener noreferrer" className="font-serif text-base font-medium text-primary hover:underline">
+                      {exp.org}
+                    </a>
+                  ) : (
+                    <h3 className="font-serif text-base font-medium text-primary">{exp.org}</h3>
+                  )}
+                  <p className="text-sm text-foreground mt-1">{exp.title}</p>
+                  <p className="text-xs text-muted-foreground mt-2">{exp.period}</p>
                 </motion.div>
               ))}
             </div>

@@ -81,8 +81,8 @@ const testimonials = [
   {
     quote: "What makes Tessrah so special is her genuine heart. She is the glue that holds the team together, always checking in on her colleagues and offering support, proving that her kindness is just as powerful as her work ethic.",
     name: "Dixon Chan",
-    role: "Design Director",
-    image: testimonial3,
+    role: "UX Designer",
+    image: "/lovable-uploads/b886041e-c6de-439a-a192-72bbe1c63986.png",
   },
 ];
 

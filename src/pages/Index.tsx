@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { ArrowRight, ArrowUpRight, Download, Quote } from "lucide-react";
-import tessrahHeadshot from "@/assets/tessrah-headshot.jpg";
+
 import heroFloral from "@/assets/hero-floral.jpg";
 import caseOneaudi from "@/assets/case-oneaudi.jpg";
 import caseDealerTheme from "@/assets/case-dealer-theme.jpg";

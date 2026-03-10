@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { ArrowRight, ArrowUpRight, Download, Quote } from "lucide-react";
-import tessrahHeadshot from "@/assets/tessrah-headshot.jpg";
+
 import heroFloral from "@/assets/hero-floral.jpg";
 import caseOneaudi from "@/assets/case-oneaudi.jpg";
 import caseDealerTheme from "@/assets/case-dealer-theme.jpg";
@@ -108,24 +108,6 @@ const Index = () => {
         </div>
 
         <div className="container relative grid lg:grid-cols-[auto_1fr] gap-16 items-center py-24">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="hidden lg:block"
-          >
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="w-72 h-72 rounded-full overflow-hidden ring-4 ring-border"
-            >
-              <img
-                src={tessrahHeadshot}
-                alt="Tessrah — Senior Product Designer"
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
-          </motion.div>
 
           <motion.div
             variants={container}

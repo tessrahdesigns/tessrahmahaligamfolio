@@ -103,7 +103,7 @@ const Index = () => {
     <>
       {/* Hero */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
+        <div className="absolute inset-0 opacity-[0.24] pointer-events-none">
           <img src={heroFloral} alt="" className="w-full h-full object-cover" aria-hidden="true" />
         </div>
 

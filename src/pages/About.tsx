@@ -118,6 +118,11 @@ const About = () => {
             </div>
           </motion.div>
 
+          {/* Design Process */}
+          <motion.div variants={item}>
+            <DesignProcess />
+          </motion.div>
+
           {/* Values */}
           <motion.div variants={item}>
             <h2 className="font-serif text-sm uppercase tracking-widest text-primary mb-8">

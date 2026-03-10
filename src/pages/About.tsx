@@ -3,13 +3,13 @@ import tessrahHeadshot from "@/assets/tessrah-headshot.jpg";
 import { Briefcase, GraduationCap, Award, Download } from "lucide-react";
 
 const skills = [
-  { title: "Communication", icon: "◎" },
-  { title: "Problem-solving", icon: "✦" },
-  { title: "Collaboration", icon: "♡" },
-  { title: "Time Management", icon: "◈" },
-  { title: "Organization", icon: "▣" },
-  { title: "Empathy", icon: "❋" },
-];
+{ title: "Communication", icon: "◎" },
+{ title: "Problem-solving", icon: "✦" },
+{ title: "Collaboration", icon: "♡" },
+{ title: "Time Management", icon: "◈" },
+{ title: "Organization", icon: "▣" },
+{ title: "Empathy", icon: "❋" }];
+
 
 
 const professionalExperience = [
@@ -90,7 +90,7 @@ const About = () => {
               
             </motion.div>
             <div>
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-foreground mb-6">
+              <h1 className="font-serif text-4xl lg:text-6xl font-light text-foreground mb-6 sm:text-4xl">
                 Tessrah Mahalingam <motion.span
                   className="inline-block ml-2"
                   animate={{ rotate: [0, 10, -10, 0] }}

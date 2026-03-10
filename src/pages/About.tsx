@@ -91,7 +91,7 @@ const About = () => {
               
             </motion.div>
             <div>
-              <h1 className="font-serif text-4xl lg:text-6xl font-light text-foreground mb-6 sm:text-4xl">
+              <h1 className="font-serif text-4xl font-light text-foreground mb-6 sm:text-4xl lg:text-5xl">
                 Tessrah Mahalingam <motion.span
                   className="inline-block ml-2"
                   animate={{ rotate: [0, 10, -10, 0] }}

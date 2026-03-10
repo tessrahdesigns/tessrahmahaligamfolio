@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import tessrahHeadshot from "@/assets/tessrah-headshot.jpg";
 import { Briefcase, GraduationCap, Award, Download } from "lucide-react";
+import DesignProcess from "@/components/DesignProcess";
 
 const skills = [
 { title: "Communication", icon: "◎" },
@@ -115,6 +116,11 @@ const About = () => {
                 Download CV
               </a>
             </div>
+          </motion.div>
+
+          {/* Design Process */}
+          <motion.div variants={item}>
+            <DesignProcess />
           </motion.div>
 
           {/* Values */}

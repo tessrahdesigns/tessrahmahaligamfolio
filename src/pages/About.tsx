@@ -82,7 +82,8 @@ const About = () => {
             <motion.div
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden ring-4 ring-border mx-auto md:mx-0">
+              className="w-56 h-72 md:w-72 md:h-96 overflow-hidden mx-auto md:mx-0"
+              style={{ borderRadius: "50% 50% 0 0" }}>
               
               <img
                 src={tessrahHeadshot}

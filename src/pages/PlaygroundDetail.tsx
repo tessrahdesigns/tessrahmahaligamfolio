@@ -4,6 +4,7 @@ import { ArrowLeft, ExternalLink, Smartphone } from "lucide-react";
 import nourishImage from "@/assets/nourish-pcos.avif";
 import nourishMealPhoto from "@/assets/nourish-meal-photo.png";
 import pongImage from "@/assets/retro-pong.png";
+import tamilImage from "@/assets/learn-tamil.png";
 
 const experiments = [
   {
@@ -57,6 +58,28 @@ This is a fully playable Pong game rendered in the browser with a retro neon aes
 The game was an exercise in creative constraints. With such a simple mechanic — two paddles, one ball — every visual and interactive detail matters. The neon glow effect, the screen shake on impact, the score counter — these small touches are what elevate a code exercise into something that actually feels fun to play.
 
 Building this reinforced something I keep coming back to: the best way to learn a tool is to build something playful with it. No stakeholders, no specs — just curiosity and a willingness to experiment. Vibe coding is perfect for this kind of exploration, where the goal isn't production-readiness but discovery and delight.`,
+  },
+  {
+    slug: "learn-tamil",
+    title: "Learn Tamil",
+    description: "An interactive phrasebook for learning Tamil — tap to reveal translations across categories like basics, family, food, and common phrases.",
+    tags: ["Language", "Education", "Vibe Coding"],
+    date: "Mar 2026",
+    liveUrl: "https://simpletamilnadu.lovable.app/",
+    heroImage: tamilImage,
+    content: `Growing up in a Tamil household abroad, language was always a bridge between two worlds. I built this app as a way to make learning Tamil more approachable — not through grammar drills, but through the phrases you'd actually hear at home, at the temple, or around the dinner table.
+
+Learn Tamil is an interactive phrasebook organized into intuitive categories: Basics, Family, Introductions, Common Phrases, Questions, Food & Drink, and Numbers. Each card shows the Tamil script alongside a phonetic transliteration, and tapping reveals the English meaning — turning learning into a simple, tactile interaction.
+
+{{LIVE_PREVIEW}}
+
+{{KEY_LEARNINGS}}
+
+What makes this different from a typical language app is its focus on conversational context. Instead of isolated vocabulary, the phrases are grouped by real-life situations. The "Family" section teaches you how to address relatives with the correct level of respect — something that's culturally essential in Tamil but rarely covered in mainstream language tools.
+
+The design leans into warmth and cultural identity, with earthy tones and traditional pattern motifs. It's meant to feel personal, like a family member teaching you rather than a textbook drilling you.
+
+This was a personal project at its core — a way to preserve and share something meaningful through code. Vibe coding made it possible to go from idea to working app in a single session, letting me focus on the content and cultural nuance rather than getting bogged down in boilerplate.`,
   },
 ];
 

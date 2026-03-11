@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import nourishImage from "@/assets/nourish-pcos.avif";
+import pongImage from "@/assets/retro-pong.png";
 
 const experiments = [
   {
@@ -11,6 +12,16 @@ const experiments = [
     tags: ["AI", "Health", "Vibe Coding"],
     date: "Mar 2026",
     liveUrl: "https://nourish-my-pcos-coach.lovable.app/",
+    image: nourishImage,
+  },
+  {
+    slug: "retro-pong",
+    title: "Retro Pong",
+    description: "A neon-lit reimagining of the classic Pong arcade game — playable on desktop and mobile with touch or keyboard controls.",
+    tags: ["Game", "Creative Code", "Vibe Coding"],
+    date: "Mar 2026",
+    liveUrl: "https://retro-bounce-ball.lovable.app/",
+    image: pongImage,
   },
 ];
 

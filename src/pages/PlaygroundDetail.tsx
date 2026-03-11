@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink, Smartphone } from "lucide-react";
 import nourishImage from "@/assets/nourish-pcos.avif";
 import nourishMealPhoto from "@/assets/nourish-meal-photo.png";
+import pongImage from "@/assets/retro-pong.png";
 
 const experiments = [
   {
@@ -12,6 +13,7 @@ const experiments = [
     tags: ["AI", "Health", "Vibe Coding"],
     date: "Mar 2026",
     liveUrl: "https://nourish-my-pcos-coach.lovable.app/",
+    heroImage: nourishImage,
     content: `PCOS affects roughly 1 in 10 people with ovaries, and nutrition is one of the most impactful — and most confusing — levers for managing symptoms. I wanted to explore what an AI-powered coach could look like that actually meets people where they are.
 
 Nourish is a conversational nutrition tool built entirely with vibe coding in Lovable. It has three core features:
@@ -35,6 +37,26 @@ I actually suffer from PCOS, and I found myself turning to this app immediately 
 Building this was an exercise in designing for empathy. The tone had to be warm and non-judgmental. No "good food / bad food" framing. No guilt. Just practical, personalized guidance that respects the complexity of living with a chronic condition.
 
 The entire app was built using AI-assisted development — from the UI components to the coaching logic. It's a proof of concept for how vibe coding can accelerate health-tech prototyping when paired with strong design thinking.`,
+  },
+  {
+    slug: "retro-pong",
+    title: "Retro Pong",
+    description: "A neon-lit reimagining of the classic Pong arcade game — playable on desktop and mobile with touch or keyboard controls.",
+    tags: ["Game", "Creative Code", "Vibe Coding"],
+    date: "Mar 2026",
+    liveUrl: "https://retro-bounce-ball.lovable.app/",
+    heroImage: pongImage,
+    content: `There's something deeply satisfying about recreating the classics. Pong was one of the first video games ever made, and I wanted to see how far I could push a simple concept using modern web tech and vibe coding.
+
+This is a fully playable Pong game rendered in the browser with a retro neon aesthetic — glowing green paddles, a bouncing ball, and a dark arcade-style backdrop. It supports both keyboard controls (W/S and arrow keys) and touch input, so it works on mobile too.
+
+{{LIVE_PREVIEW}}
+
+{{KEY_LEARNINGS}}
+
+The game was an exercise in creative constraints. With such a simple mechanic — two paddles, one ball — every visual and interactive detail matters. The neon glow effect, the screen shake on impact, the score counter — these small touches are what elevate a code exercise into something that actually feels fun to play.
+
+Building this reinforced something I keep coming back to: the best way to learn a tool is to build something playful with it. No stakeholders, no specs — just curiosity and a willingness to experiment. Vibe coding is perfect for this kind of exploration, where the goal isn't production-readiness but discovery and delight.`,
   },
 ];
 

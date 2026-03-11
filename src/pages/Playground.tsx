@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import nourishImage from "@/assets/nourish-pcos.avif";
+import pongImage from "@/assets/retro-pong.png";
 
 const experiments = [
   {
@@ -11,6 +12,16 @@ const experiments = [
     tags: ["AI", "Health", "Vibe Coding"],
     date: "Mar 2026",
     liveUrl: "https://nourish-my-pcos-coach.lovable.app/",
+    image: nourishImage,
+  },
+  {
+    slug: "retro-pong",
+    title: "Retro Pong",
+    description: "A neon-lit reimagining of the classic Pong arcade game — playable on desktop and mobile with touch or keyboard controls.",
+    tags: ["Game", "Creative Code", "Vibe Coding"],
+    date: "Mar 2026",
+    liveUrl: "https://retro-bounce-ball.lovable.app/",
+    image: pongImage,
   },
 ];
 
@@ -70,7 +81,7 @@ const Playground = () => {
                   className="h-full border border-border rounded-sm overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 bg-card"
                 >
                   <div className="aspect-[16/9] overflow-hidden">
-                    <img src={nourishImage} alt={exp.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src={exp.image} alt={exp.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <div className="p-8">
                   <div className="flex items-center justify-between mb-4">

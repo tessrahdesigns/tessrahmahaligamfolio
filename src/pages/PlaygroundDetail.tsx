@@ -102,7 +102,7 @@ const PlaygroundDetail = () => {
           </div>
 
           <div className="rounded-sm overflow-hidden mb-12">
-            <img src={nourishImage} alt={experiment.title} className="w-full h-auto" />
+            <img src={experiment.heroImage} alt={experiment.title} className="w-full h-auto" />
           </div>
 
           <div className="prose prose-neutral max-w-none">

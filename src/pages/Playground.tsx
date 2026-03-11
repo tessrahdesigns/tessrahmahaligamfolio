@@ -81,7 +81,7 @@ const Playground = () => {
                   className="h-full border border-border rounded-sm overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-300 bg-card"
                 >
                   <div className="aspect-[16/9] overflow-hidden">
-                    <img src={nourishImage} alt={exp.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src={exp.image} alt={exp.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <div className="p-8">
                   <div className="flex items-center justify-between mb-4">

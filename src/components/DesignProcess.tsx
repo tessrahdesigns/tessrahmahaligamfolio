@@ -74,10 +74,10 @@ const DesignProcess = () => {
               transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -4, scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className={`relative flex flex-col items-center gap-3 p-5 rounded-lg border transition-all duration-300 text-left cursor-pointer group ${
+              className={`relative flex flex-col items-center gap-3 p-5 rounded-lg transition-all duration-300 text-left cursor-pointer group ${
                 isActive
-                  ? "border-primary bg-primary/5 shadow-md"
-                  : "border-border bg-card hover:border-primary/30 hover:shadow-sm"
+                  ? "bg-primary/5"
+                  : "hover:bg-muted/30"
               }`}
             >
               {/* Step number */}

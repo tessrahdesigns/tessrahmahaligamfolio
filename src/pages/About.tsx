@@ -178,7 +178,7 @@ const About = () => {
             <h2 className="font-serif text-sm uppercase tracking-widest text-primary mb-8">
               Education
             </h2>
-            <div className="relative">
+            <div className="relative max-w-xl">
               <div className="absolute left-[15px] top-2 bottom-2 w-px bg-border" />
               <div className="space-y-8">
                 {education.map((exp, i) =>

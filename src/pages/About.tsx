@@ -135,7 +135,7 @@ const About = () => {
                 key={s.title}
                 whileHover={{ scale: 1.08, y: -2 }}
                 transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                className="px-5 py-3 border border-border rounded-full bg-card hover:border-primary/40 hover:shadow-md transition-all duration-300 flex items-center gap-2 cursor-default">
+                className="px-5 py-3 rounded-full hover:bg-muted/30 transition-all duration-300 flex items-center gap-2 cursor-default">
                   <span className="text-sm opacity-40">{s.icon}</span>
                   <span className="text-sm font-medium text-foreground">{s.title}</span>
                 </motion.div>

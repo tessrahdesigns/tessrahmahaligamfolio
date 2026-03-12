@@ -47,17 +47,17 @@ The entire app was built using AI-assisted development — from the UI component
     date: "Mar 2026",
     liveUrl: "https://retro-bounce-ball.lovable.app/",
     heroImage: pongImage,
-    content: `There's something deeply satisfying about recreating the classics. Pong was one of the first video games ever made, and I wanted to see how far I could push a simple concept using modern web tech and vibe coding.
+    content: `I recently wanted to show my nephews (ages 6 and 9) that it's actually really easy to build their own game. Using Lovable, I built a fully functional Ping Pong game in minutes. I wanted to introduce them to the world of STEAM in a way they found relatable.
 
-This is a fully playable Pong game rendered in the browser with a retro neon aesthetic — glowing green paddles, a bouncing ball, and a dark arcade-style backdrop. It supports both keyboard controls (W/S and arrow keys) and touch input, so it works on mobile too.
+**Demystifying Tech** — Code doesn't have to be intimidating.
+
+**The Power of the Prompt** — By using Vibe Coding they saw how simple, descriptive language can transform an idea into reality.
+
+**Immediate Gratification** — By shifting their perspective from players to builders, we turned screen time into a lesson in logic and creativity.
 
 {{LIVE_PREVIEW}}
 
-{{KEY_LEARNINGS}}
-
-The game was an exercise in creative constraints. With such a simple mechanic — two paddles, one ball — every visual and interactive detail matters. The neon glow effect, the screen shake on impact, the score counter — these small touches are what elevate a code exercise into something that actually feels fun to play.
-
-Building this reinforced something I keep coming back to: the best way to learn a tool is to build something playful with it. No stakeholders, no specs — just curiosity and a willingness to experiment. Vibe coding is perfect for this kind of exploration, where the goal isn't production-readiness but discovery and delight.`,
+It turns out, you're never too young to start shipping code. The game is playable on both desktop and mobile, give it a try!`,
   },
   {
     slug: "learn-tamil",

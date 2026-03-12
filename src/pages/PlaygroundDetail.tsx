@@ -67,19 +67,15 @@ It turns out, you're never too young to start shipping code. The game is playabl
     date: "Mar 2026",
     liveUrl: "https://simpletamilnadu.lovable.app/",
     heroImage: tamilImage,
-    content: `Growing up in a Tamil household abroad, language was always a bridge between two worlds. I built this app as a way to make learning Tamil more approachable — not through grammar drills, but through the phrases you'd actually hear at home, at the temple, or around the dinner table.
+    content: `Tamil is one of the oldest languages spoken in the world - it's also one of the most complex languages to learn. Or so I've been told. As a Trinidadian-Canadian married into a Sri Lankan family, my journey with the Tamil language has been a lesson in "filling in the blanks."
 
-Learn Tamil is an interactive phrasebook organized into intuitive categories: Basics, Family, Introductions, Common Phrases, Questions, Food & Drink, and Numbers. Each card shows the Tamil script alongside a phonetic transliteration, and tapping reveals the English meaning — turning learning into a simple, tactile interaction.
+In many Tamil-Canadian households, conversations aren't strictly one language; they are a vibrant hybrid of Tamil and English. For a beginner like me, following a conversation is like trying to solve a puzzle. I rely on a mix of body language, the English words dropped into sentences, and repetitive common Tamil phrases that I've learned to recognize by ear, even if I couldn't spell them.
+
+However, once the conversation shifts to complex topics, I'm quickly left behind. Most existing resources are too formal or academic to help with this specific, everyday "hybrid" reality. So, I used Lovable to build exactly what I needed: a bridge for the beginner. I wanted to build a tool that focused on how Tamil is actually spoken in a Canadian-Sri Lankan home, rather than how it's written in a textbook.
 
 {{LIVE_PREVIEW}}
 
-{{KEY_LEARNINGS}}
-
-What makes this different from a typical language app is its focus on conversational context. Instead of isolated vocabulary, the phrases are grouped by real-life situations. The "Family" section teaches you how to address relatives with the correct level of respect — something that's culturally essential in Tamil but rarely covered in mainstream language tools.
-
-The design leans into warmth and cultural identity, with earthy tones and traditional pattern motifs. It's meant to feel personal, like a family member teaching you rather than a textbook drilling you.
-
-This was a personal project at its core — a way to preserve and share something meaningful through code. Vibe coding made it possible to go from idea to working app in a single session, letting me focus on the content and cultural nuance rather than getting bogged down in boilerplate.`,
+I uploaded my own data—an Excel sheet of phrases I've gathered over years—and used AI to break them down phonetically. If a word sounds like an English syllable, that's how it will be displayed. I've been beta-testing the app with my in-laws. While it's still a work in progress and needs more refinement. By focusing on the way we actually speak at home, I'm building a tool that turns "hearing" into "understanding."`,
   },
 ];
 

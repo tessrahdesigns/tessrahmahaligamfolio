@@ -19,7 +19,7 @@ const experiments = [
     slug: "retro-pong",
     title: "Retro Pong",
     description: "A neon-lit reimagining of the classic Pong arcade game — playable on desktop and mobile with touch or keyboard controls.",
-    tags: ["Game", "Creative Code", "Vibe Coding"],
+    tags: ["Game", "STEAM for kids", "Vibe Coding"],
     date: "Mar 2026",
     liveUrl: "https://retro-bounce-ball.lovable.app/",
     image: pongImage,

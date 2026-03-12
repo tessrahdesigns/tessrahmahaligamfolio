@@ -75,7 +75,7 @@ However, once the conversation shifts to complex topics, I'm quickly left behind
 
 {{LIVE_PREVIEW}}
 
-I uploaded my own data—an Excel sheet of phrases I've gathered over years—and used AI to break them down phonetically. If a word sounds like an English syllable, that's how it will be displayed. I've been beta-testing the app with my in-laws. While it's still a work in progress and needs more refinement. By focusing on the way we actually speak at home, I'm building a tool that turns "hearing" into "understanding."`,
+I uploaded my own data—an Excel sheet of phrases I've gathered over years—and used AI to break them down phonetically. If a word sounds like an English syllable, that's how it will be displayed. I've been beta-testing the app with my in-laws; it's still a work in progress and needs more refinement. By focusing on the way we actually speak at home, I'm building a tool that turns "hearing" into "understanding."`,
   },
 ];
 

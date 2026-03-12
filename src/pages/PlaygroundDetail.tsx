@@ -62,7 +62,7 @@ It turns out, you're never too young to start shipping code. The game is playabl
   {
     slug: "learn-tamil",
     title: "Learn Tamil",
-    description: "An interactive phrasebook for learning Tamil — tap to reveal translations across categories like basics, family, food, and common phrases.",
+    description: "An interactive phrasebook for learning the Tamil language.",
     tags: ["Language", "Education", "Vibe Coding"],
     date: "Mar 2026",
     liveUrl: "https://simpletamilnadu.lovable.app/",

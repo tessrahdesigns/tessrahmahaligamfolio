@@ -348,6 +348,7 @@ const CaseStudy = () => {
         )}
       </div>
     </article>
+    </PasswordGate>
   );
 };
 

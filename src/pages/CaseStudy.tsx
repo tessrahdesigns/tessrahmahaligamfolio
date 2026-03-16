@@ -113,6 +113,7 @@ const CaseStudy = () => {
   }
 
   return (
+    <PasswordGate storageKey={`case-study-unlocked-${slug}`}>
     <article>
       {/* Full-bleed hero */}
       <div ref={heroRef} className="relative overflow-hidden">

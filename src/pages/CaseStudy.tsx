@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, ArrowRight, Clock, Users, Layers, Zap } from "lucide-react";
 import { useRef } from "react";
+import PasswordGate from "@/components/PasswordGate";
 import caseOneaudi from "@/assets/case-oneaudi.jpg";
 import caseDealerTheme from "@/assets/case-dealer-theme.jpg";
 

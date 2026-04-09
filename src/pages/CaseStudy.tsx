@@ -23,6 +23,7 @@ interface CaseStudyMeta {
   reflections: string;
   nextSlug?: string;
   nextTitle?: string;
+  customContent?: boolean;
 }
 
 const caseStudyData: Record<string, CaseStudyMeta> = {

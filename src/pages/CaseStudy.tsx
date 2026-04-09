@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, ArrowRight, Clock, Users, Layers, Zap } from "lucide-react";
 import { useRef } from "react";
 import PasswordGate from "@/components/PasswordGate";
+import OneAudiContent from "@/components/case-studies/OneAudiContent";
 import caseOneaudi from "@/assets/case-oneaudi.jpg";
 import caseDealerTheme from "@/assets/case-dealer-theme.jpg";
 
@@ -26,35 +27,22 @@ interface CaseStudyMeta {
 
 const caseStudyData: Record<string, CaseStudyMeta> = {
   "oneaudi-digital-dealership": {
-    title: "OneAudi Digital Dealership",
+    title: "Standardizing the Premium Experience: Audi North America Dealer Ecosystem",
     category: "Automotive / Enterprise",
     image: caseOneaudi,
-    summary: "A platform-led transformation that unified Audi's fragmented dealer ecosystem — improving page speed by 400% and enabling a seamless customer journey across thousands of sites globally.",
-    duration: "12+ months",
+    summary: "",
+    duration: "12 Months",
     team: "Cross-functional (Design, Engineering, Product, Stakeholders)",
-    tools: ["Figma", "Miro", "JIRA", "Analytics"],
-    context: "Audi's dealer ecosystem was fragmented — thousands of dealership websites globally were running on outdated platforms with inconsistent branding, poor performance, and disconnected customer journeys. The business needed a unified platform that could scale across markets while giving dealers enough flexibility to feel ownership of their digital presence.",
-    role: "UX Designer responsible for the dealer-facing experience, working within a cross-functional team of developers, product managers, and stakeholders across multiple markets. I led the design of the platform's component system and customer journey flows.",
-    process: [
-      "Conducted extensive stakeholder interviews across multiple dealer markets to understand pain points and regional nuances.",
-      "Ran competitive analysis of automotive digital retail platforms to identify industry patterns and gaps.",
-      "Created journey maps for both dealers (admin experience) and end customers (browsing/buying) to surface disconnects.",
-      "Led iterative design sprints with rapid prototyping and user testing with actual dealership staff.",
-    ],
-    decisions: [
-      "Adopted a MACH architecture approach (Microservices, API-first, Cloud-native, Headless) to ensure scalability and future-proofing.",
-      "Designed a modular component system that maintained Audi's premium brand standards while allowing regional customization.",
-      "Prioritized performance optimization from the start, treating page speed as a core UX metric rather than an afterthought.",
-    ],
-    outcomes: [
-      { metric: "400%", detail: "Page speed improvement across dealership sites" },
-      { metric: "1000+", detail: "Dealership sites unified under one platform" },
-      { metric: "60%", detail: "Faster time-to-market for new dealer launches" },
-      { metric: "Seamless", detail: "Customer journey across the global ecosystem" },
-    ],
-    reflections: "This project taught me the complexity of enterprise-scale design — where the user isn't just the end customer, but also the dealership staff, regional marketing teams, and global brand guardians. The biggest challenge was balancing global consistency with local flexibility. The solution was building a robust design system with clear guardrails rather than rigid templates.",
+    tools: ["Figma", "Miro", "JIRA", "Adobe AEM"],
+    context: "",
+    role: "",
+    process: [],
+    decisions: [],
+    outcomes: [],
+    reflections: "",
     nextSlug: "dealer-theme-activation",
     nextTitle: "Dealer Theme Activation Platform",
+    customContent: true,
   },
   "dealer-theme-activation": {
     title: "Dealer Theme Activation Platform",

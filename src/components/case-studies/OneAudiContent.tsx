@@ -10,24 +10,24 @@ const OneAudiContent = () => {
     { metric: "400%", detail: "Page Speed Improvement — Drastically reduced bounce rates and improved SEO across the entire dealer network." },
     { metric: "1,000+", detail: "Sites Unified — Migrated a massive legacy network into a single, governed AEM instance." },
     { metric: "60%", detail: "Faster Time-to-Market — Standardized templates allowed for nearly instant deployment of new dealership sites." },
-    { metric: "Seamless", detail: "Journey — Established a "Global Ecosystem" feel where a customer in Nashville and a customer in Rockville experience the same premium brand standards." },
+    { metric: "Seamless", detail: 'Journey — Established a "Global Ecosystem" feel where a customer in Nashville and a customer in Rockville experience the same premium brand standards.' },
   ];
 
   const uxCompetencies = [
-    "Problem Definition: Identifying the financial and brand cost of the "Dealer.com" legacy model.",
+    'Problem Definition: Identifying the financial and brand cost of the "Dealer.com" legacy model.',
     "Information Architecture (IA): Auditing and restructuring complex navigation paths into a scalable global baseline.",
     "Cross-Functional Workshop Facilitation: Leading 2-day intensive sessions with Product Managers to align business, legal, and design goals.",
     "Interaction Auditing: Mapping and annotating existing third-party user flows through forensic screenshot analysis.",
     "Competitive & Market Research: Comparing the Ireland vs. USA markets to account for geographical and cultural variances.",
     "Wireframing & Prototyping: Creating modular, state-dependent layouts for third-party vendor integrations.",
-    "Developer Handoff & Documentation: Building a "Source of Truth" in Figma for high-fidelity implementation.",
+    'Developer Handoff & Documentation: Building a "Source of Truth" in Figma for high-fidelity implementation.',
     "Stakeholder Management: Balancing the needs of Audi Corporate with the autonomy of 1,000+ individual dealers.",
   ];
 
   const challenges = [
     { label: "Inconsistency", detail: "Dealerships created their own navigation structures and content hierarchies, diluting the Audi premium brand experience." },
     { label: "High Overhead", detail: "The business incurred massive costs hosting these sites through third-party providers." },
-    { label: "Technical Complexity", detail: "A web of diverse vendor integrations (trade-in tools, service schedulers, finance CTAs) made a "one-size-fits-all" solution impossible." },
+    { label: "Technical Complexity", detail: 'A web of diverse vendor integrations (trade-in tools, service schedulers, finance CTAs) made a "one-size-fits-all" solution impossible.' },
   ];
 
   return (

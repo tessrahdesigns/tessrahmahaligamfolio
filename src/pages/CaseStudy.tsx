@@ -144,174 +144,180 @@ const CaseStudy = () => {
       </div>
 
       <div className="container max-w-5xl py-16 sm:py-24">
-        {/* Summary + Meta row */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="grid md:grid-cols-[1.5fr_1fr] gap-12 mb-20 pb-16 border-b border-border"
-        >
-          <p className="text-lg sm:text-xl text-foreground leading-relaxed">
-            {study.summary}
-          </p>
-          <div className="space-y-5">
-            <div className="flex items-start gap-3">
-              <Clock size={16} className="text-primary mt-1 flex-shrink-0" />
-              <div>
-                <span className="text-xs uppercase tracking-wider text-muted-foreground block mb-0.5">Duration</span>
-                <span className="text-sm text-foreground">{study.duration}</span>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <Users size={16} className="text-primary mt-1 flex-shrink-0" />
-              <div>
-                <span className="text-xs uppercase tracking-wider text-muted-foreground block mb-0.5">Team</span>
-                <span className="text-sm text-foreground">{study.team}</span>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <Layers size={16} className="text-primary mt-1 flex-shrink-0" />
-              <div>
-                <span className="text-xs uppercase tracking-wider text-muted-foreground block mb-0.5">Tools</span>
-                <div className="flex flex-wrap gap-1.5 mt-1">
-                  {study.tools.map((t) => (
-                    <span key={t} className="text-xs px-2.5 py-1 rounded-full bg-muted text-muted-foreground">{t}</span>
-                  ))}
+        {study.customContent ? (
+          <OneAudiContent />
+        ) : (
+          <>
+            {/* Summary + Meta row */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="grid md:grid-cols-[1.5fr_1fr] gap-12 mb-20 pb-16 border-b border-border"
+            >
+              <p className="text-lg sm:text-xl text-foreground leading-relaxed">
+                {study.summary}
+              </p>
+              <div className="space-y-5">
+                <div className="flex items-start gap-3">
+                  <Clock size={16} className="text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <span className="text-xs uppercase tracking-wider text-muted-foreground block mb-0.5">Duration</span>
+                    <span className="text-sm text-foreground">{study.duration}</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Users size={16} className="text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <span className="text-xs uppercase tracking-wider text-muted-foreground block mb-0.5">Team</span>
+                    <span className="text-sm text-foreground">{study.team}</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Layers size={16} className="text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <span className="text-xs uppercase tracking-wider text-muted-foreground block mb-0.5">Tools</span>
+                    <div className="flex flex-wrap gap-1.5 mt-1">
+                      {study.tools.map((t) => (
+                        <span key={t} className="text-xs px-2.5 py-1 rounded-full bg-muted text-muted-foreground">{t}</span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </motion.div>
+            </motion.div>
 
-        {/* Context */}
-        <motion.div
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-80px" }}
-          className="mb-20"
-        >
-          <h2 className="font-serif text-2xl sm:text-3xl font-light text-foreground mb-6">
-            The Challenge
-          </h2>
-          <p className="text-foreground/80 text-lg leading-relaxed max-w-3xl">
-            {study.context}
-          </p>
-        </motion.div>
+            {/* Context */}
+            <motion.div
+              variants={sectionVariant}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-80px" }}
+              className="mb-20"
+            >
+              <h2 className="font-serif text-2xl sm:text-3xl font-light text-foreground mb-6">
+                The Challenge
+              </h2>
+              <p className="text-foreground/80 text-lg leading-relaxed max-w-3xl">
+                {study.context}
+              </p>
+            </motion.div>
 
-        {/* Role */}
-        <motion.div
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-80px" }}
-          className="mb-20 bg-card border border-border rounded-sm p-8 sm:p-12"
-        >
-          <h2 className="font-serif text-sm uppercase tracking-widest text-primary mb-4">My Role</h2>
-          <p className="text-foreground leading-relaxed text-lg">{study.role}</p>
-        </motion.div>
+            {/* Role */}
+            <motion.div
+              variants={sectionVariant}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-80px" }}
+              className="mb-20 bg-card border border-border rounded-sm p-8 sm:p-12"
+            >
+              <h2 className="font-serif text-sm uppercase tracking-widest text-primary mb-4">My Role</h2>
+              <p className="text-foreground leading-relaxed text-lg">{study.role}</p>
+            </motion.div>
 
-        {/* Process */}
-        <motion.div
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-80px" }}
-          className="mb-20"
-        >
-          <h2 className="font-serif text-2xl sm:text-3xl font-light text-foreground mb-10">
-            Process
-          </h2>
-          <div className="space-y-0">
-            {study.process.map((step, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="flex gap-6 py-6 border-b border-border last:border-0"
-              >
-                <span className="font-serif text-3xl font-light text-primary/40 flex-shrink-0 w-10">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <p className="text-foreground/80 leading-relaxed pt-1">{step}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+            {/* Process */}
+            <motion.div
+              variants={sectionVariant}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-80px" }}
+              className="mb-20"
+            >
+              <h2 className="font-serif text-2xl sm:text-3xl font-light text-foreground mb-10">
+                Process
+              </h2>
+              <div className="space-y-0">
+                {study.process.map((step, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1, duration: 0.5 }}
+                    className="flex gap-6 py-6 border-b border-border last:border-0"
+                  >
+                    <span className="font-serif text-3xl font-light text-primary/40 flex-shrink-0 w-10">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <p className="text-foreground/80 leading-relaxed pt-1">{step}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
 
-        {/* Key Decisions */}
-        <motion.div
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-80px" }}
-          className="mb-20"
-        >
-          <h2 className="font-serif text-2xl sm:text-3xl font-light text-foreground mb-10">
-            Key Decisions
-          </h2>
-          <div className="grid sm:grid-cols-1 gap-4">
-            {study.decisions.map((decision, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ x: 6 }}
-                transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                className="flex items-start gap-4 p-6 border border-border rounded-sm bg-card hover:border-primary/30 transition-colors"
-              >
-                <Zap size={18} className="text-primary mt-0.5 flex-shrink-0" />
-                <p className="text-foreground/80 leading-relaxed">{decision}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+            {/* Key Decisions */}
+            <motion.div
+              variants={sectionVariant}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-80px" }}
+              className="mb-20"
+            >
+              <h2 className="font-serif text-2xl sm:text-3xl font-light text-foreground mb-10">
+                Key Decisions
+              </h2>
+              <div className="grid sm:grid-cols-1 gap-4">
+                {study.decisions.map((decision, i) => (
+                  <motion.div
+                    key={i}
+                    whileHover={{ x: 6 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                    className="flex items-start gap-4 p-6 border border-border rounded-sm bg-card hover:border-primary/30 transition-colors"
+                  >
+                    <Zap size={18} className="text-primary mt-0.5 flex-shrink-0" />
+                    <p className="text-foreground/80 leading-relaxed">{decision}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
 
-        {/* Outcomes */}
-        <motion.div
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-80px" }}
-          className="mb-20"
-        >
-          <h2 className="font-serif text-2xl sm:text-3xl font-light text-foreground mb-10">
-            Results
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {study.outcomes.map((outcome, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                whileHover={{ y: -4 }}
-                className="p-8 border border-border rounded-sm bg-card text-center hover:shadow-md transition-shadow"
-              >
-                <span className="block font-serif text-3xl sm:text-4xl font-light text-primary mb-2">
-                  {outcome.metric}
-                </span>
-                <span className="text-sm text-muted-foreground">{outcome.detail}</span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+            {/* Outcomes */}
+            <motion.div
+              variants={sectionVariant}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-80px" }}
+              className="mb-20"
+            >
+              <h2 className="font-serif text-2xl sm:text-3xl font-light text-foreground mb-10">
+                Results
+              </h2>
+              <div className="grid sm:grid-cols-2 gap-6">
+                {study.outcomes.map((outcome, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1, duration: 0.5 }}
+                    whileHover={{ y: -4 }}
+                    className="p-8 border border-border rounded-sm bg-card text-center hover:shadow-md transition-shadow"
+                  >
+                    <span className="block font-serif text-3xl sm:text-4xl font-light text-primary mb-2">
+                      {outcome.metric}
+                    </span>
+                    <span className="text-sm text-muted-foreground">{outcome.detail}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
 
-        {/* Reflections */}
-        <motion.div
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-80px" }}
-          className="mb-20 relative"
-        >
-          <div className="border-l-2 border-primary/30 pl-8 sm:pl-12 py-4">
-            <h2 className="font-serif text-sm uppercase tracking-widest text-primary mb-4">Reflections</h2>
-            <p className="text-foreground/80 text-lg leading-relaxed italic">{study.reflections}</p>
-          </div>
-        </motion.div>
+            {/* Reflections */}
+            <motion.div
+              variants={sectionVariant}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-80px" }}
+              className="mb-20 relative"
+            >
+              <div className="border-l-2 border-primary/30 pl-8 sm:pl-12 py-4">
+                <h2 className="font-serif text-sm uppercase tracking-widest text-primary mb-4">Reflections</h2>
+                <p className="text-foreground/80 text-lg leading-relaxed italic">{study.reflections}</p>
+              </div>
+            </motion.div>
+          </>
+        )}
 
         {/* Next project */}
         {study.nextSlug && (
